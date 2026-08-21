@@ -1,0 +1,161 @@
+{
+  "period": {
+    "start": "2022-01-01",
+    "end": "2024-12-31"
+  },
+  "earnings_calls_available": 12,
+  "earnings_rule": {
+    "bullish": "SUE > 0 and Q&A sentiment > 0 and executive sentiment > 0",
+    "bearish": "SUE < 0 and Q&A sentiment < 0 and executive sentiment < 0",
+    "position": "+1 bullish / -1 bearish",
+    "holding_days": 3,
+    "execution": "Enter at first post-call close; earn returns beginning next close",
+    "priority": "Earnings override news/core positions"
+  },
+  "qualifying_events": [
+    {
+      "earnings_date": "2022-01-27",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2022-01-28",
+      "first_return_date": "2022-01-31",
+      "holding_days": 3,
+      "sue": 1.476511004280941,
+      "qa_sentiment": 0.1719864838339638,
+      "executive_sentiment": 0.2018708244456099
+    },
+    {
+      "earnings_date": "2022-04-28",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2022-04-29",
+      "first_return_date": "2022-05-02",
+      "holding_days": 3,
+      "sue": 0.6415724783756505,
+      "qa_sentiment": 0.1143870751185275,
+      "executive_sentiment": 0.1844721411655294
+    },
+    {
+      "earnings_date": "2023-05-04",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2023-05-05",
+      "first_return_date": "2023-05-08",
+      "holding_days": 3,
+      "sue": 0.7717943040735621,
+      "qa_sentiment": 0.1460514218578697,
+      "executive_sentiment": 0.3002950536317601
+    },
+    {
+      "earnings_date": "2023-08-03",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2023-08-04",
+      "first_return_date": "2023-08-07",
+      "holding_days": 3,
+      "sue": 0.8562136357288496,
+      "qa_sentiment": 0.251050620609981,
+      "executive_sentiment": 0.4114896875543411
+    },
+    {
+      "earnings_date": "2023-11-02",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2023-11-03",
+      "first_return_date": "2023-11-06",
+      "holding_days": 3,
+      "sue": 0.8910563851303024,
+      "qa_sentiment": 0.049879282624548,
+      "executive_sentiment": 0.0613554879388752
+    },
+    {
+      "earnings_date": "2024-02-01",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2024-02-02",
+      "first_return_date": "2024-02-05",
+      "holding_days": 3,
+      "sue": 1.486020294432478,
+      "qa_sentiment": 0.1385044586645113,
+      "executive_sentiment": 0.2231469456361626
+    },
+    {
+      "earnings_date": "2024-05-02",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2024-05-03",
+      "first_return_date": "2024-05-06",
+      "holding_days": 3,
+      "sue": 0.3859224924939798,
+      "qa_sentiment": 0.0577119691843496,
+      "executive_sentiment": 0.1617086358853201
+    },
+    {
+      "earnings_date": "2024-08-01",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2024-08-02",
+      "first_return_date": "2024-08-05",
+      "holding_days": 3,
+      "sue": 1.147138567458348,
+      "qa_sentiment": 0.2101949965000837,
+      "executive_sentiment": 0.3590953798276421
+    },
+    {
+      "earnings_date": "2024-10-31",
+      "direction": "bullish",
+      "position": 1.0,
+      "first_post_call_close": "2024-11-01",
+      "first_return_date": "2024-11-04",
+      "holding_days": 3,
+      "sue": 0.7759835936631704,
+      "qa_sentiment": 0.1336919313430247,
+      "executive_sentiment": 0.2754685852346022
+    }
+  ],
+  "core_news_plus_earnings": {
+    "observations": 753,
+    "total_return": 1.0220570216325102,
+    "cagr": 0.26571880619862087,
+    "annualized_volatility": 0.16795657425391597,
+    "sharpe_ratio": 1.249076811635221,
+    "sortino_ratio": 1.9614688000007385,
+    "max_drawdown": 0.09030806361796695,
+    "positive_day_rate": 0.5378486055776892,
+    "exposure": 1.0,
+    "active_days": 753,
+    "active_day_hit_rate": 0.5378486055776892,
+    "total_turnover": 187.0,
+    "estimated_cost": 0.0935,
+    "average_net_exposure": 0.3791500664010624,
+    "average_gross_exposure": 0.6102257636122178
+  },
+  "core_news_without_earnings": {
+    "observations": 753,
+    "total_return": 1.1067730248747791,
+    "cagr": 0.2832236474199519,
+    "annualized_volatility": 0.1650818047965137,
+    "sharpe_ratio": 1.3511169609242493,
+    "sortino_ratio": 2.2151664399699835,
+    "max_drawdown": 0.10709272828192717,
+    "positive_day_rate": 0.5391766268260292,
+    "exposure": 1.0,
+    "active_days": 753,
+    "active_day_hit_rate": 0.5391766268260292,
+    "total_turnover": 186.0,
+    "estimated_cost": 0.093,
+    "average_net_exposure": 0.34462151394422313,
+    "average_gross_exposure": 0.599601593625498
+  },
+  "aapl_buy_and_hold": {
+    "observations": 753,
+    "total_return": 0.41026074224251774,
+    "cagr": 0.12192737511557294,
+    "annualized_volatility": 0.27111045520340205,
+    "sharpe_ratio": 0.4119755283484241,
+    "sortino_ratio": 0.6217888382601624,
+    "max_drawdown": 0.3131146640294452,
+    "positive_day_rate": 0.5298804780876494
+  },
+  "warning": "Small historical development test with only 12 calls; not independent validation."
+}

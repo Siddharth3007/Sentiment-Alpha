@@ -111,3 +111,26 @@ The strategy held +50% for 964 days, +100% for 90 days, and -100% for 152 days. 
 
 Although the compounded historical result beat AAPL, its paired daily excess-return p-value was 0.614 and therefore was not statistically significant. Moreover, the overlay design was influenced by the 2024–2025 subset and prior full-period diagnostics. The result is a historical development backtest, not an untouched validation.
 
+## Small-window earnings-call integration
+
+Period: 2022-01-01 through 2024-12-31. The test contained 12 Apple earnings calls and used the existing 50% core plus tiered-news overlay as its baseline. An earnings call overrode the news position for three trading days when all three signs agreed:
+
+- Bullish: positive standardized unexpected earnings (`SUE`), positive overall Q&A sentiment, and positive executive sentiment; position +100%.
+- Bearish: all three inputs negative; position -100%.
+
+Calls were assumed to occur after the market close. The strategy entered at the first subsequent trading close, so it did not earn the immediate overnight reaction. Position changes cost five basis points per unit of turnover.
+
+| Metric | Core + news + earnings | Core + news | AAPL buy & hold |
+|---|---:|---:|---:|
+| Total return | 102.21% | **110.68%** | 41.03% |
+| CAGR | 26.57% | **28.32%** | 12.19% |
+| Sharpe ratio | 1.25 | **1.35** | 0.41 |
+| Sortino ratio | 1.96 | **2.22** | 0.62 |
+| Maximum drawdown | **9.03%** | 10.71% | 31.31% |
+| Annualized volatility | 16.80% | **16.51%** | 27.11% |
+
+The earnings overlay did not improve return or risk-adjusted return. It reduced total return by 8.47 percentage points and Sharpe by 0.10, while improving maximum drawdown by 1.68 percentage points. Nine calls generated bullish overrides, none generated bearish overrides, and the remaining three generated no signal. Four overrides helped relative to the baseline and five hurt.
+
+The largest failure followed the 2024-08-01 call and cost approximately 9.03 percentage points of simple return relative to the baseline during its override. Executive and overall Q&A sentiment were positive, but analyst sentiment was slightly negative. Analyst–management agreement is therefore a sensible next hypothesis, but adding that filter now would be a post-hoc adjustment rather than independent validation.
+
+This is a compact development diagnostic with only 12 calls. It is useful for rejecting this first earnings rule, not for establishing a durable earnings-call edge.
