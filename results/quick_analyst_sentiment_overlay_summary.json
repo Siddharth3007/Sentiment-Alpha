@@ -1,0 +1,231 @@
+{
+  "period": {
+    "start": "2022-01-01",
+    "end": "2024-12-31"
+  },
+  "earnings_calls_available": 12,
+  "rule": {
+    "normal_position": 0.5,
+    "analyst_signal": "analyst_sentiment > threshold",
+    "signal_position": 1.0,
+    "executive_sentiment_used": false,
+    "sue_used": false,
+    "news_shorts_have_priority": true,
+    "execution": "Enter at first post-call close; earn returns beginning next close"
+  },
+  "parameter_grid": [
+    {
+      "label": "threshold_0.00_hold_1d",
+      "analyst_threshold": 0.0,
+      "holding_days": 1,
+      "qualifying_calls": 4,
+      "observations": 753,
+      "total_return": 1.1483478849807973,
+      "cagr": 0.29164324844210454,
+      "annualized_volatility": 0.16570699072838657,
+      "sharpe_ratio": 1.3861396252584814,
+      "sortino_ratio": 2.2814556905353145,
+      "max_drawdown": 0.10709272828192717,
+      "positive_day_rate": 0.5391766268260292,
+      "exposure": 1.0,
+      "active_days": 753,
+      "active_day_hit_rate": 0.5391766268260292,
+      "total_turnover": 187.0,
+      "estimated_cost": 0.0935,
+      "average_net_exposure": 0.3459495351925631,
+      "average_gross_exposure": 0.600929614873838
+    },
+    {
+      "label": "threshold_0.00_hold_3d",
+      "analyst_threshold": 0.0,
+      "holding_days": 3,
+      "qualifying_calls": 4,
+      "observations": 753,
+      "total_return": 1.2230804936768376,
+      "cagr": 0.30650926306183823,
+      "annualized_volatility": 0.16709055811181134,
+      "sharpe_ratio": 1.4445625467762635,
+      "sortino_ratio": 2.397156358182093,
+      "max_drawdown": 0.10343963371971876,
+      "positive_day_rate": 0.5391766268260292,
+      "exposure": 1.0,
+      "active_days": 753,
+      "active_day_hit_rate": 0.5391766268260292,
+      "total_turnover": 189.0,
+      "estimated_cost": 0.0945,
+      "average_net_exposure": 0.350597609561753,
+      "average_gross_exposure": 0.6055776892430279
+    },
+    {
+      "label": "threshold_0.05_hold_1d",
+      "analyst_threshold": 0.05,
+      "holding_days": 1,
+      "qualifying_calls": 1,
+      "observations": 753,
+      "total_return": 1.1328851660402761,
+      "cagr": 0.2885245585969294,
+      "annualized_volatility": 0.1655609723368518,
+      "sharpe_ratio": 1.3726008789558206,
+      "sortino_ratio": 2.257181438192905,
+      "max_drawdown": 0.10709272828192673,
+      "positive_day_rate": 0.5391766268260292,
+      "exposure": 1.0,
+      "active_days": 753,
+      "active_day_hit_rate": 0.5391766268260292,
+      "total_turnover": 187.0,
+      "estimated_cost": 0.0935,
+      "average_net_exposure": 0.3452855245683931,
+      "average_gross_exposure": 0.600265604249668
+    },
+    {
+      "label": "threshold_0.05_hold_3d",
+      "analyst_threshold": 0.05,
+      "holding_days": 3,
+      "qualifying_calls": 1,
+      "observations": 753,
+      "total_return": 1.139325435590313,
+      "cagr": 0.2898253243640785,
+      "annualized_volatility": 0.16559680591965578,
+      "sharpe_ratio": 1.3784390523784504,
+      "sortino_ratio": 2.2674488650693814,
+      "max_drawdown": 0.10709272828192784,
+      "positive_day_rate": 0.5391766268260292,
+      "exposure": 1.0,
+      "active_days": 753,
+      "active_day_hit_rate": 0.5391766268260292,
+      "total_turnover": 187.0,
+      "estimated_cost": 0.0935,
+      "average_net_exposure": 0.3466135458167331,
+      "average_gross_exposure": 0.601593625498008
+    }
+  ],
+  "best_by_total_return": "threshold_0.00_hold_3d",
+  "event_logs": {
+    "threshold_0.00_hold_1d": [
+      {
+        "earnings_date": "2022-01-27",
+        "analyst_sentiment": 0.1194131319333637,
+        "first_post_call_close": "2022-01-28",
+        "first_return_date": "2022-01-31",
+        "scheduled_holding_days": 1,
+        "long_days_after_short_priority": 1,
+        "incremental_simple_return_vs_baseline": 0.01281287794281675
+      },
+      {
+        "earnings_date": "2022-04-28",
+        "analyst_sentiment": 0.0052885348058755,
+        "first_post_call_close": "2022-04-29",
+        "first_return_date": "2022-05-02",
+        "scheduled_holding_days": 1,
+        "long_days_after_short_priority": 0,
+        "incremental_simple_return_vs_baseline": 0.0
+      },
+      {
+        "earnings_date": "2023-11-02",
+        "analyst_sentiment": 0.0332019608434879,
+        "first_post_call_close": "2023-11-03",
+        "first_return_date": "2023-11-06",
+        "scheduled_holding_days": 1,
+        "long_days_after_short_priority": 1,
+        "incremental_simple_return_vs_baseline": 0.0070525757146900495
+      },
+      {
+        "earnings_date": "2024-02-01",
+        "analyst_sentiment": 0.0035923500594464,
+        "first_post_call_close": "2024-02-02",
+        "first_return_date": "2024-02-05",
+        "scheduled_holding_days": 1,
+        "long_days_after_short_priority": 0,
+        "incremental_simple_return_vs_baseline": 0.0
+      }
+    ],
+    "threshold_0.00_hold_3d": [
+      {
+        "earnings_date": "2022-01-27",
+        "analyst_sentiment": 0.1194131319333637,
+        "first_post_call_close": "2022-01-28",
+        "first_return_date": "2022-01-31",
+        "scheduled_holding_days": 3,
+        "long_days_after_short_priority": 3,
+        "incremental_simple_return_vs_baseline": 0.01584868732007645
+      },
+      {
+        "earnings_date": "2022-04-28",
+        "analyst_sentiment": 0.0052885348058755,
+        "first_post_call_close": "2022-04-29",
+        "first_return_date": "2022-05-02",
+        "scheduled_holding_days": 3,
+        "long_days_after_short_priority": 2,
+        "incremental_simple_return_vs_baseline": 0.025065483094176052
+      },
+      {
+        "earnings_date": "2023-11-02",
+        "analyst_sentiment": 0.0332019608434879,
+        "first_post_call_close": "2023-11-03",
+        "first_return_date": "2023-11-06",
+        "scheduled_holding_days": 3,
+        "long_days_after_short_priority": 3,
+        "incremental_simple_return_vs_baseline": 0.0104950462899842
+      },
+      {
+        "earnings_date": "2024-02-01",
+        "analyst_sentiment": 0.0035923500594464,
+        "first_post_call_close": "2024-02-02",
+        "first_return_date": "2024-02-05",
+        "scheduled_holding_days": 3,
+        "long_days_after_short_priority": 2,
+        "incremental_simple_return_vs_baseline": 0.004356400887372
+      }
+    ],
+    "threshold_0.05_hold_1d": [
+      {
+        "earnings_date": "2022-01-27",
+        "analyst_sentiment": 0.1194131319333637,
+        "first_post_call_close": "2022-01-28",
+        "first_return_date": "2022-01-31",
+        "scheduled_holding_days": 1,
+        "long_days_after_short_priority": 1,
+        "incremental_simple_return_vs_baseline": 0.01281287794281675
+      }
+    ],
+    "threshold_0.05_hold_3d": [
+      {
+        "earnings_date": "2022-01-27",
+        "analyst_sentiment": 0.1194131319333637,
+        "first_post_call_close": "2022-01-28",
+        "first_return_date": "2022-01-31",
+        "scheduled_holding_days": 3,
+        "long_days_after_short_priority": 3,
+        "incremental_simple_return_vs_baseline": 0.01584868732007645
+      }
+    ]
+  },
+  "core_news_baseline": {
+    "observations": 753,
+    "total_return": 1.1067730248747791,
+    "cagr": 0.2832236474199519,
+    "annualized_volatility": 0.1650818047965137,
+    "sharpe_ratio": 1.3511169609242493,
+    "sortino_ratio": 2.2151664399699835,
+    "max_drawdown": 0.10709272828192717,
+    "positive_day_rate": 0.5391766268260292,
+    "exposure": 1.0,
+    "active_days": 753,
+    "active_day_hit_rate": 0.5391766268260292,
+    "total_turnover": 186.0,
+    "estimated_cost": 0.093,
+    "average_net_exposure": 0.34462151394422313,
+    "average_gross_exposure": 0.599601593625498
+  },
+  "aapl_buy_and_hold": {
+    "observations": 753,
+    "total_return": 0.41026074224251774,
+    "cagr": 0.12192737511557294,
+    "annualized_volatility": 0.27111045520340205,
+    "sharpe_ratio": 0.4119755283484241,
+    "sortino_ratio": 0.6217888382601624,
+    "max_drawdown": 0.3131146640294452,
+    "positive_day_rate": 0.5298804780876494
+  },
+  "warning": "Post-hoc development test with 12 calls; the selected parameter is not independent validation."
+}

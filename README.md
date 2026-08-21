@@ -28,10 +28,12 @@ The original RSI bug is corrected: thresholds are applied to RSI, not to AAPL's 
 
 ```bash
 python run_backtest.py
+python quick_earnings_integration.py
+python quick_analyst_sentiment_overlay.py
 python -m unittest discover -s tests
 ```
 
-The source data is a compact extraction of the existing aligned AAPL price and precomputed FinBERT daily news-score history. No earnings-call feature is used.
+The core walk-forward test uses a compact extraction of the existing aligned AAPL price and precomputed FinBERT daily news-score history. The two earnings diagnostic scripts use the compact AAPL earnings-call feature extraction in `data/aapl_earnings_features.csv`.
 
 ## Latest result
 
@@ -51,3 +53,6 @@ See `RESULTS.md` and the files under `results/` for the full audit trail.
 
 The frozen 50% AAPL core plus news overlay was subsequently evaluated over the full deduplicated walk-forward history. It returned 230.00%, versus 122.57% for AAPL, with an 18.01% maximum drawdown versus 33.43%. This is a historical development-period result rather than an untouched final validation.
 
+### Analyst-only earnings overlay
+
+The latest small-window diagnostic raises exposure from 50% to 100% using only positive analyst-question sentiment after earnings calls. News shorts retain priority. See `RESULTS.md` for the four threshold/holding-period comparisons and limitations.

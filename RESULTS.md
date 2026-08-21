@@ -134,3 +134,22 @@ The earnings overlay did not improve return or risk-adjusted return. It reduced 
 The largest failure followed the 2024-08-01 call and cost approximately 9.03 percentage points of simple return relative to the baseline during its override. Executive and overall Q&A sentiment were positive, but analyst sentiment was slightly negative. Analyst–management agreement is therefore a sensible next hypothesis, but adding that filter now would be a post-hoc adjustment rather than independent validation.
 
 This is a compact development diagnostic with only 12 calls. It is useful for rejecting this first earnings rule, not for establishing a durable earnings-call edge.
+
+## Analyst-only earnings long overlay
+
+The earnings rule was simplified to use analyst-question sentiment only. Executive sentiment and SUE were ignored. On a qualifying call, exposure increased from the existing core/news position to +100%, while any active news short retained priority. The same conservative execution convention was used: enter at the first trading close after the call and earn returns beginning with the following close-to-close period.
+
+Period: 2022-01-01 through 2024-12-31. All figures include five basis points per unit of turnover.
+
+| Analyst threshold | Holding period | Qualifying calls | Total return | CAGR | Sharpe | Max drawdown |
+|---:|---:|---:|---:|---:|---:|---:|
+| > 0.00 | 1 day | 4 | 114.83% | 29.16% | 1.39 | 10.71% |
+| > 0.00 | 3 days | 4 | **122.31%** | **30.65%** | **1.44** | **10.34%** |
+| > 0.05 | 1 day | 1 | 113.29% | 28.85% | 1.37 | 10.71% |
+| > 0.05 | 3 days | 1 | 113.93% | 28.98% | 1.38 | 10.71% |
+| Core + news baseline | n/a | n/a | 110.68% | 28.32% | 1.35 | 10.71% |
+| AAPL buy & hold | n/a | n/a | 41.03% | 12.19% | 0.41 | 31.31% |
+
+The best tested construction—analyst sentiment above zero with a three-day hold—improved total return by 11.63 percentage points and Sharpe by 0.09 relative to the core/news baseline. All four qualifying calls contributed positively over their scheduled override periods: 2022-01-27, 2022-04-28, 2023-11-02, and 2024-02-01.
+
+This is encouraging but extremely sparse evidence: only four of the 12 calls qualified, and the rule and parameters were examined on an already-used development window. The result supports testing analyst sentiment on the longer 2011–2024 call history; it does not yet validate the rule or the three-day holding period.
