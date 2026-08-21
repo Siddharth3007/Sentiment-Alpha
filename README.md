@@ -30,6 +30,7 @@ The original RSI bug is corrected: thresholds are applied to RSI, not to AAPL's 
 python run_backtest.py
 python quick_earnings_integration.py
 python quick_analyst_sentiment_overlay.py
+python full_analyst_sentiment_overlay.py
 python -m unittest discover -s tests
 ```
 
@@ -56,3 +57,5 @@ The frozen 50% AAPL core plus news overlay was subsequently evaluated over the f
 ### Analyst-only earnings overlay
 
 The latest small-window diagnostic raises exposure from 50% to 100% using only positive analyst-question sentiment after earnings calls. News shorts retain priority. See `RESULTS.md` for the four threshold/holding-period comparisons and limitations.
+
+The selected rule—analyst sentiment above zero with a three-day hold—is also applied unchanged by `full_analyst_sentiment_overlay.py` to the entire deduplicated 2020–2025 history.

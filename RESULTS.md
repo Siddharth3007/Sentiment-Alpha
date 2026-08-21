@@ -153,3 +153,34 @@ Period: 2022-01-01 through 2024-12-31. All figures include five basis points per
 The best tested construction—analyst sentiment above zero with a three-day hold—improved total return by 11.63 percentage points and Sharpe by 0.09 relative to the core/news baseline. All four qualifying calls contributed positively over their scheduled override periods: 2022-01-27, 2022-04-28, 2023-11-02, and 2024-02-01.
 
 This is encouraging but extremely sparse evidence: only four of the 12 calls qualified, and the rule and parameters were examined on an already-used development window. The result supports testing analyst sentiment on the longer 2011–2024 call history; it does not yet validate the rule or the three-day holding period.
+
+## Full-window analyst-only overlay
+
+The small-window winner was frozen and applied unchanged to all 1,206 deduplicated walk-forward observations from 2020-07-14 through 2025-04-30:
+
+- Normal position: +50%.
+- Analyst-question sentiment > 0: increase to +100% for three trading days.
+- Executive sentiment and SUE: unused.
+- Existing news shorts: highest priority and remain at -100%.
+- Trading cost: five basis points per unit of turnover.
+
+| Metric | Core + news + analyst | Core + news baseline | AAPL buy & hold |
+|---|---:|---:|---:|
+| Total return | **251.54%** | 230.00% | 122.57% |
+| CAGR | **30.04%** | 28.34% | 18.20% |
+| Sharpe ratio | **1.30** | 1.24 | 0.57 |
+| Sortino ratio | **2.00** | 1.91 | 0.84 |
+| Maximum drawdown | 18.01% | **18.01%** | 33.43% |
+| Annualized volatility | 18.46% | **18.19%** | 30.01% |
+
+Eighteen calls were available and seven had positive analyst sentiment. Six of the seven analyst overrides helped relative to the baseline during their scheduled periods; the 2021-04-28 call hurt. The overlay added 21.54 percentage points of compounded full-period return, with slightly higher volatility and unchanged maximum drawdown.
+
+The segment breakdown is important:
+
+| Segment | Analyst overlay | Baseline | AAPL |
+|---|---:|---:|---:|
+| Pre-selection: 2020-07-14 to 2021-12-31 | 70.21% | 68.61% | 85.98% |
+| Parameter-selection window: 2022–2024 | 122.31% | 110.68% | 41.03% |
+| Partial 2025, no qualifying call | -7.10% | -7.10% | -15.14% |
+
+The paired daily incremental-return test against the core/news baseline produced a two-sided p-value of 0.106. The improvement is therefore not statistically significant at the conventional 5% level. Most of the gain occurred in the 2022–2024 period used to select the rule; the earlier segment improved only modestly. This remains a development result rather than independent validation.
