@@ -1,0 +1,46 @@
+{
+  "period": {
+    "start": "2024-01-01",
+    "end": "2025-04-30"
+  },
+  "combinations_tested": 12,
+  "best_by_net_return": {
+    "sentiment_threshold": 0.2,
+    "holding_days": 1.0,
+    "signal_events": 25.0,
+    "entries": 18.0,
+    "observations": 333.0,
+    "total_return": 0.053393110122766485,
+    "cagr": 0.040148850435669736,
+    "annualized_volatility": 0.06934792978132355,
+    "sharpe_ratio": 0.02492962743115051,
+    "sortino_ratio": 0.018390734457984798,
+    "max_drawdown": 0.041832805833928344,
+    "positive_day_rate": 0.042042042042042045,
+    "exposure": 0.07807807807807808,
+    "active_days": 26.0,
+    "active_day_hit_rate": 0.5384615384615384,
+    "total_turnover": 36.0,
+    "estimated_cost": 0.018
+  },
+  "baseline_threshold_0.20_holding_1": {
+    "sentiment_threshold": 0.2,
+    "holding_days": 1.0,
+    "signal_events": 25.0,
+    "entries": 18.0,
+    "observations": 333.0,
+    "total_return": 0.053393110122766485,
+    "cagr": 0.040148850435669736,
+    "annualized_volatility": 0.06934792978132355,
+    "sharpe_ratio": 0.02492962743115051,
+    "sortino_ratio": 0.018390734457984798,
+    "max_drawdown": 0.041832805833928344,
+    "positive_day_rate": 0.042042042042042045,
+    "exposure": 0.07807807807807808,
+    "active_days": 26.0,
+    "active_day_hit_rate": 0.5384615384615384,
+    "total_turnover": 36.0,
+    "estimated_cost": 0.018
+  },
+  "warning": "Small development grid on previously examined data; ranking is not a fresh holdout result."
+}

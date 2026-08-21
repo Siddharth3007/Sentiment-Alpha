@@ -49,3 +49,15 @@ Period: 2024-01-01 through 2025-04-30. This reuses previously examined out-of-sa
 
 The fixed three-day extension worsened both return and drawdown. For this recent compact period, the original one-day short is the better rule. A future exit test should use a condition-based exit rather than automatically extending every news event.
 
+### Small parameter grid
+
+The same period was tested across positive-news thresholds of 0.10, 0.20 and 0.30 and holding periods of 1, 2, 3 and 5 trading days. All returns include five basis points per unit of turnover.
+
+| Sentiment threshold | 1 day | 2 days | 3 days | 5 days |
+|---:|---:|---:|---:|---:|
+| 0.10 | 3.84% | -1.24% | 0.24% | 3.41% |
+| 0.20 | **5.34%** | 3.49% | 0.68% | -5.11% |
+| 0.30 | 2.14% | 1.81% | 4.92% | -3.29% |
+
+The original threshold of 0.20 with a one-day hold remained best. This result supports retaining the baseline for now, but it does not validate the parameters because the grid was evaluated on previously examined development data.
+
