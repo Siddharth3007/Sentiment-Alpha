@@ -61,3 +61,21 @@ The same period was tested across positive-news thresholds of 0.10, 0.20 and 0.3
 
 The original threshold of 0.20 with a one-day hold remained best. This result supports retaining the baseline for now, but it does not validate the parameters because the grid was evaluated on previously examined development data.
 
+### Tiered short rule
+
+The following combined rule was then tested over the same period:
+
+- `0.20 < lagged sentiment <= 0.30`: short for one trading day.
+- `lagged sentiment > 0.30`: short for three trading days.
+
+| Metric | Tiered rule | Baseline 0.20/1-day | AAPL buy & hold |
+|---|---:|---:|---:|
+| Total return | **7.86%** | 5.34% | 10.37% |
+| CAGR | **5.89%** | 4.01% | 7.75% |
+| Sharpe ratio | **0.26** | 0.02 | 0.26 |
+| Maximum drawdown | 4.31% | **4.18%** | 33.43% |
+| Exposure | 12.91% | 7.81% | 100.00% |
+| Entries | 15 | 18 | n/a |
+
+The tiered rule improved return and Sharpe while leaving drawdown nearly unchanged. It used 14 moderate-sentiment events and 11 strong-sentiment events. This is the strongest short-only development rule tested so far, but it still requires validation on a genuinely untouched period.
+
