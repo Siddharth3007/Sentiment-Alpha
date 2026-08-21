@@ -47,3 +47,7 @@ For the deduplicated out-of-sample period from 2020-07-14 through 2025-04-30:
 
 See `RESULTS.md` and the files under `results/` for the full audit trail.
 
+### Latest core-plus-overlay construction
+
+The frozen 50% AAPL core plus news overlay was subsequently evaluated over the full deduplicated walk-forward history. It returned 230.00%, versus 122.57% for AAPL, with an 18.01% maximum drawdown versus 33.43%. This is a historical development-period result rather than an untouched final validation.
+

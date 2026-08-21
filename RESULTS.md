@@ -94,3 +94,20 @@ The next diagnostic used a permanent 50% AAPL position, increased exposure to 10
 
 The strategy spent 278 days at +50%, 12 days at +100%, and 43 days at -100%. It used 56 units of turnover after direct position flips and five-basis-point costs. This construction produced the strongest return and risk-adjusted result in the small-period diagnostics, but it was designed using the same development period and requires untouched validation.
 
+## Full-period 50% core plus news overlay
+
+The core-plus-overlay rule was frozen and applied to all 1,206 deduplicated walk-forward test days from 2020-07-14 through 2025-04-30. The remaining cash earned 0%, and all position changes were charged five basis points per unit of turnover.
+
+| Metric | Core + overlay | Original long/short | Tiered short-only | Passive 50% AAPL | AAPL buy & hold |
+|---|---:|---:|---:|---:|---:|
+| Total return | **230.00%** | 80.70% | 53.48% | 57.35% | 122.57% |
+| CAGR | **28.34%** | 13.16% | 9.37% | 9.94% | 18.20% |
+| Sharpe ratio | **1.24** | 0.83 | 0.57 | 0.44 | 0.57 |
+| Sortino ratio | **1.91** | 0.75 | 0.41 | 0.64 | 0.84 |
+| Maximum drawdown | 18.01% | 12.71% | **7.59%** | 18.01% | 33.43% |
+| Annualized volatility | 18.19% | 10.79% | **9.44%** | 15.01% | 30.01% |
+
+The strategy held +50% for 964 days, +100% for 90 days, and -100% for 152 days. Average gross exposure was 60.03%, average net exposure was 34.83%, and total turnover was 259.5 units. It produced positive calendar-period returns in 2020–2024 and lost 7.10% in the partial 2025 period, versus a 15.14% AAPL loss.
+
+Although the compounded historical result beat AAPL, its paired daily excess-return p-value was 0.614 and therefore was not statistically significant. Moreover, the overlay design was influenced by the 2024–2025 subset and prior full-period diagnostics. The result is a historical development backtest, not an untouched validation.
+
