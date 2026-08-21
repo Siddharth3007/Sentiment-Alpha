@@ -1,0 +1,72 @@
+{
+  "period": {
+    "start": "2024-01-01",
+    "end": "2025-04-30"
+  },
+  "position_rules": {
+    "normal": 0.5,
+    "negative_news_recovery": 1.0,
+    "moderate_short": -1.0,
+    "strong_short": -1.0,
+    "short_priority": true,
+    "long_holding_days": 1,
+    "moderate_short_holding_days": 1,
+    "strong_short_holding_days": 3
+  },
+  "events": {
+    "negative_news_recovery": 13,
+    "moderate_short": 14,
+    "strong_short": 11
+  },
+  "core_plus_overlay": {
+    "observations": 333,
+    "total_return": 0.24039490370892835,
+    "cagr": 0.17706959596413996,
+    "annualized_volatility": 0.16718599390593383,
+    "sharpe_ratio": 0.818899361148259,
+    "sortino_ratio": 1.2221247207248664,
+    "max_drawdown": 0.18006504845532334,
+    "positive_day_rate": 0.5585585585585585,
+    "exposure": 1.0,
+    "active_days": 333,
+    "active_day_hit_rate": 0.5585585585585585,
+    "total_turnover": 56.0,
+    "estimated_cost": 0.028,
+    "average_net_exposure": 0.32432432432432434,
+    "average_gross_exposure": 0.5825825825825826,
+    "days_at_core_0.5": 278,
+    "days_at_long_1.0": 12,
+    "days_at_short_minus_1.0": 43
+  },
+  "passive_50_percent_aapl": {
+    "observations": 333,
+    "total_return": 0.0663162481985744,
+    "cagr": 0.04979122745015552,
+    "annualized_volatility": 0.15135892215275018,
+    "sharpe_ratio": 0.13179664071664973,
+    "sortino_ratio": 0.17988085561673828,
+    "max_drawdown": 0.18006504845532278,
+    "positive_day_rate": 0.5495495495495496,
+    "exposure": 1.0,
+    "active_days": 333,
+    "active_day_hit_rate": 0.5495495495495496,
+    "total_turnover": 0.0,
+    "estimated_cost": 0.0,
+    "average_net_exposure": 0.5,
+    "average_gross_exposure": 0.5,
+    "days_at_core_0.5": 333,
+    "days_at_long_1.0": 0,
+    "days_at_short_minus_1.0": 0
+  },
+  "aapl_buy_and_hold": {
+    "observations": 333,
+    "total_return": 0.1037240949462499,
+    "cagr": 0.07754394491662486,
+    "annualized_volatility": 0.30271784430550036,
+    "sharpe_ratio": 0.26393288822385735,
+    "sortino_ratio": 0.3602252189505673,
+    "max_drawdown": 0.3343371168249538,
+    "positive_day_rate": 0.5495495495495496
+  },
+  "warning": "Development diagnostic on previously examined data; remaining 50% cash earns 0%."
+}

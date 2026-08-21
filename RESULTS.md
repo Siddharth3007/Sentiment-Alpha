@@ -79,3 +79,18 @@ The following combined rule was then tested over the same period:
 
 The tiered rule improved return and Sharpe while leaving drawdown nearly unchanged. It used 14 moderate-sentiment events and 11 strong-sentiment events. This is the strongest short-only development rule tested so far, but it still requires validation on a genuinely untouched period.
 
+### 50% AAPL core plus news overlay
+
+The next diagnostic used a permanent 50% AAPL position, increased exposure to 100% for a one-day negative-news recovery signal, and allowed the tiered short rule to override and flip exposure to -100%. After a short expired, exposure returned to 50%. The uninvested portion earned 0%.
+
+| Metric | 50% core + overlay | Passive 50% AAPL | AAPL buy & hold |
+|---|---:|---:|---:|
+| Total return | **24.04%** | 6.63% | 10.37% |
+| CAGR | **17.71%** | 4.98% | 7.75% |
+| Sharpe ratio | **0.82** | 0.13 | 0.26 |
+| Sortino ratio | **1.22** | 0.18 | 0.36 |
+| Maximum drawdown | 18.01% | **18.01%** | 33.43% |
+| Annualized volatility | 16.72% | 15.14% | 30.27% |
+
+The strategy spent 278 days at +50%, 12 days at +100%, and 43 days at -100%. It used 56 units of turnover after direct position flips and five-basis-point costs. This construction produced the strongest return and risk-adjusted result in the small-period diagnostics, but it was designed using the same development period and requires untouched validation.
+
