@@ -34,3 +34,18 @@ The signal behaved more like a low-exposure risk-control strategy than an AAPL r
 
 This is a historical research result, not evidence of a deployable trading edge. It excludes slippage beyond the stated cost, short-borrow fees, taxes, intraday execution uncertainty, and any retraining of the underlying FinBERT news scores.
 
+## Quick short-only holding-period diagnostic
+
+Period: 2024-01-01 through 2025-04-30. This reuses previously examined out-of-sample data and is therefore a development diagnostic, not a fresh holdout.
+
+| Metric | One-day short | Three-day short | AAPL buy & hold |
+|---|---:|---:|---:|
+| Total return | 5.34% | 0.68% | 10.37% |
+| CAGR | 4.01% | 0.51% | 7.75% |
+| Sharpe ratio | 0.02 | -0.29 | 0.26 |
+| Maximum drawdown | 4.18% | 12.30% | 33.43% |
+| Exposure | 7.81% | 18.02% | 100.00% |
+| Entries | 18 | 14 | n/a |
+
+The fixed three-day extension worsened both return and drawdown. For this recent compact period, the original one-day short is the better rule. A future exit test should use a condition-based exit rather than automatically extending every news event.
+
