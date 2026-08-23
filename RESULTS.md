@@ -184,3 +184,28 @@ The segment breakdown is important:
 | Partial 2025, no qualifying call | -7.10% | -7.10% | -15.14% |
 
 The paired daily incremental-return test against the core/news baseline produced a two-sided p-value of 0.106. The improvement is therefore not statistically significant at the conventional 5% level. Most of the gain occurred in the 2022–2024 period used to select the rule; the earlier segment improved only modestly. This remains a development result rather than independent validation.
+
+## Small-window local-LLM news diagnostic
+
+Qwen3-0.6B replaced only the FinBERT headline classifier over October 1–November 27,
+2024. The 334 source headlines were anonymized, classified locally with deterministic
+decoding and no retrieval, and aggregated with the original net-score formula. The
+strategy thresholds, technical filters, holding periods, execution lag, and transaction
+costs were unchanged.
+
+| Metric | Qwen3-0.6B overlay | FinBERT overlay | Passive 50% AAPL | AAPL buy & hold |
+|---|---:|---:|---:|---:|
+| Total return | 2.57% | **3.34%** | 0.46% | 0.83% |
+| Sharpe ratio | 0.82 | **1.10** | -0.09 | 0.14 |
+| Maximum drawdown | **3.85%** | **3.85%** | 3.09% | 6.12% |
+
+The Qwen score had only 0.30 Pearson correlation with the FinBERT score. It labeled
+280 of 334 headlines positive, 43 negative, and 11 neutral, producing an implausibly
+bullish average daily score of 0.63 versus 0.05 for FinBERT. It generated no negative-
+news recovery events and converted most technical short setups into strong shorts.
+
+This run demonstrates that the LLM pipeline works, but **does not support replacing
+FinBERT with Qwen3-0.6B**. The small model's label calibration is poor, and the 42-day
+window is both short and previously observed. A credible next experiment requires the
+4B instruct model, a calibration set labeled independently of returns, frozen prompts
+and thresholds, and a later untouched test period.
