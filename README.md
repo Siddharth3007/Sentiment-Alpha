@@ -33,6 +33,7 @@ python run_backtest.py
 python quick_earnings_integration.py
 python quick_analyst_sentiment_overlay.py
 python full_analyst_sentiment_overlay.py
+python quick_llm_news_test.py
 python -m unittest discover -s tests
 ```
 
@@ -61,3 +62,8 @@ The frozen 50% AAPL core plus news overlay was subsequently evaluated over the f
 The latest small-window diagnostic raises exposure from 50% to 100% using only positive analyst-question sentiment after earnings calls. News shorts retain priority. See `RESULTS.md` for the four threshold/holding-period comparisons and limitations.
 
 The selected rule—analyst sentiment above zero with a three-day hold—is also applied unchanged by `full_analyst_sentiment_overlay.py` to the entire deduplicated 2020–2025 history.
+
+`quick_llm_news_test.py` is an optional local-LLM diagnostic. It classifies anonymized
+headlines with Qwen3-0.6B and compares the unchanged core/news strategy with the
+existing FinBERT version over October 1–November 27, 2024. It requires `torch` and
+`transformers`, and reads the original news CSV without modifying the source project.
