@@ -1,0 +1,100 @@
+{
+  "period": {
+    "start": "2024-10-01",
+    "end": "2024-11-27",
+    "trading_days": 42,
+    "headlines": 334
+  },
+  "llm": {
+    "model": "Qwen/Qwen3-0.6B",
+    "device": "mps",
+    "classification": "anonymized headline-only, deterministic, no retrieval",
+    "label_counts": {
+      "Positive": 280,
+      "Negative": 43,
+      "Neutral": 11
+    },
+    "unparsed_outputs_defaulted_to_neutral": 0
+  },
+  "frozen_strategy": {
+    "normal_position": 0.5,
+    "negative_news_recovery": "score < -0.05, then 100% long for 1 day",
+    "moderate_short": "0.20 < score <= 0.30, then short for 1 day",
+    "strong_short": "score > 0.30, then short for 3 days",
+    "technical_filters": true,
+    "short_priority": true,
+    "transaction_cost_bps_per_unit_turnover": 5.0
+  },
+  "qwen3_0_6b_overlay": {
+    "observations": 42,
+    "total_return": 0.025699833289357654,
+    "cagr": 0.16445231754710754,
+    "annualized_volatility": 0.1508678170285048,
+    "sharpe_ratio": 0.8180268116642155,
+    "sortino_ratio": 1.1241579121720717,
+    "max_drawdown": 0.038485551216597025,
+    "positive_day_rate": 0.5714285714285714,
+    "exposure": 1.0,
+    "active_days": 42,
+    "active_day_hit_rate": 0.5714285714285714,
+    "total_turnover": 6.5,
+    "estimated_cost": 0.00325,
+    "negative_news_events": 0,
+    "moderate_short_events": 0,
+    "strong_short_events": 12,
+    "days_at_core_0.5": 21,
+    "days_at_long_1.0": 0,
+    "days_at_short_minus_1.0": 21
+  },
+  "finbert_overlay_same_window": {
+    "observations": 42,
+    "total_return": 0.033391632401646554,
+    "cagr": 0.21783834415224956,
+    "annualized_volatility": 0.1532158589734266,
+    "sharpe_ratio": 1.1005377907382334,
+    "sortino_ratio": 1.5400862992971842,
+    "max_drawdown": 0.038485551216597025,
+    "positive_day_rate": 0.5714285714285714,
+    "exposure": 1.0,
+    "active_days": 42,
+    "active_day_hit_rate": 0.5714285714285714,
+    "total_turnover": 12.5,
+    "estimated_cost": 0.00625,
+    "negative_news_events": 4,
+    "moderate_short_events": 2,
+    "strong_short_events": 6,
+    "days_at_core_0.5": 21,
+    "days_at_long_1.0": 3,
+    "days_at_short_minus_1.0": 18
+  },
+  "passive_50_percent_aapl": {
+    "observations": 42,
+    "total_return": 0.004586837504752417,
+    "cagr": 0.027838547911440914,
+    "annualized_volatility": 0.09311768316299722,
+    "sharpe_ratio": -0.08914162216915027,
+    "sortino_ratio": -0.12143168575089917,
+    "max_drawdown": 0.030914768443096485,
+    "positive_day_rate": 0.5238095238095238,
+    "exposure": 1.0,
+    "active_days": 42,
+    "active_day_hit_rate": 0.5238095238095238,
+    "total_turnover": 0.5,
+    "estimated_cost": 0.00025
+  },
+  "aapl_buy_and_hold": {
+    "observations": 42,
+    "total_return": 0.00828326180257588,
+    "cagr": 0.05074019474983693,
+    "annualized_volatility": 0.1857454650222236,
+    "sharpe_ratio": 0.14212286333492063,
+    "sortino_ratio": 0.19453419378690756,
+    "max_drawdown": 0.061189106901217816,
+    "positive_day_rate": 0.5238095238095238
+  },
+  "warnings": [
+    "Short development diagnostic; not an untouched holdout.",
+    "Qwen3-0.6B is a fast local proxy, not Qwen3-4B-Instruct-2507.",
+    "The model predates this historical window and may retain event knowledge despite entity anonymization."
+  ]
+}
