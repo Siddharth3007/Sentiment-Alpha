@@ -1,4 +1,6 @@
-# AAPL News Strategy — Walk-Forward Backtest
+# Sentiment Alpha
+
+Point-in-time equity research infrastructure for testing news- and earnings-call-sentiment hypotheses with walk-forward validation.
 
 This is a fresh repository created without modifying Trading Strategy v1 or v2.
 
