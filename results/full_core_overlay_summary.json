@@ -1,0 +1,108 @@
+{
+  "period": {
+    "start": "2020-07-14",
+    "end": "2025-04-30",
+    "observations": 1206
+  },
+  "frozen_rule": {
+    "normal_position": 0.5,
+    "negative_news_recovery_position": 1.0,
+    "negative_news_recovery_holding_days": 1,
+    "moderate_short_range": "0.20 < lagged sentiment <= 0.30",
+    "moderate_short_holding_days": 1,
+    "strong_short_range": "lagged sentiment > 0.30",
+    "strong_short_holding_days": 3,
+    "short_position": -1.0,
+    "short_priority": true,
+    "transaction_cost_bps_per_unit_turnover": 5.0
+  },
+  "events": {
+    "negative_news_recovery": 93,
+    "moderate_short": 53,
+    "strong_short": 40
+  },
+  "core_plus_overlay": {
+    "observations": 1206,
+    "total_return": 2.3000395599039187,
+    "cagr": 0.2833564104061008,
+    "annualized_volatility": 0.1818755669625352,
+    "sharpe_ratio": 1.2428916627443471,
+    "sortino_ratio": 1.9126155936147315,
+    "max_drawdown": 0.18006504845532345,
+    "positive_day_rate": 0.538971807628524,
+    "exposure": 1.0,
+    "active_days": 1206,
+    "active_day_hit_rate": 0.538971807628524,
+    "total_turnover": 259.5,
+    "estimated_cost": 0.12975,
+    "average_net_exposure": 0.3482587064676617,
+    "average_gross_exposure": 0.6003316749585407,
+    "days_at_core_0.5": 964,
+    "days_at_long_1.0": 90,
+    "days_at_short_minus_1.0": 152
+  },
+  "passive_50_percent_aapl": {
+    "observations": 1206,
+    "total_return": 0.573547377295633,
+    "cagr": 0.09935781388053044,
+    "annualized_volatility": 0.15006099711359325,
+    "sharpe_ratio": 0.4395909756318554,
+    "sortino_ratio": 0.644613540955587,
+    "max_drawdown": 0.180065048455323,
+    "positive_day_rate": 0.5298507462686567,
+    "exposure": 1.0,
+    "active_days": 1206,
+    "active_day_hit_rate": 0.5298507462686567,
+    "total_turnover": 0.5,
+    "estimated_cost": 0.00025,
+    "average_net_exposure": 0.5,
+    "average_gross_exposure": 0.5
+  },
+  "tiered_short_only": {
+    "observations": 1206,
+    "total_return": 0.5348321724283491,
+    "cagr": 0.09365009692792836,
+    "annualized_volatility": 0.09441097285239254,
+    "sharpe_ratio": 0.5714241112086137,
+    "sortino_ratio": 0.41374629738007557,
+    "max_drawdown": 0.07589249086347949,
+    "positive_day_rate": 0.06882255389718077,
+    "exposure": 0.12603648424543948,
+    "active_days": 152,
+    "active_day_hit_rate": 0.5460526315789473,
+    "total_turnover": 124.0,
+    "estimated_cost": 0.062,
+    "average_net_exposure": -0.12603648424543948,
+    "average_gross_exposure": 0.12603648424543948
+  },
+  "original_long_short": {
+    "observations": 1206,
+    "total_return": 0.8069800286717397,
+    "cagr": 0.13159689031732147,
+    "annualized_volatility": 0.10786055723327839,
+    "sharpe_ratio": 0.8290138126023858,
+    "sortino_ratio": 0.7497383525385457,
+    "max_drawdown": 0.12712296586577831,
+    "positive_day_rate": 0.08872305140961857,
+    "exposure": 0.15422885572139303,
+    "active_days": 186,
+    "active_day_hit_rate": 0.5752688172043011,
+    "total_turnover": 298.0,
+    "estimated_cost": 0.149
+  },
+  "aapl_buy_and_hold": {
+    "observations": 1206,
+    "total_return": 1.2256552590925067,
+    "cagr": 0.1819609879100561,
+    "annualized_volatility": 0.30012737956016017,
+    "sharpe_ratio": 0.5732079429573104,
+    "sortino_ratio": 0.8405637342267446,
+    "max_drawdown": 0.33433711682495393,
+    "positive_day_rate": 0.5298507462686567
+  },
+  "paired_daily_excess_return_test_vs_aapl": {
+    "t_statistic": 0.5048596670850246,
+    "p_value_two_sided": 0.6137497174188052
+  },
+  "warning": "Historical development-period evaluation; the remaining cash earns 0%."
+}

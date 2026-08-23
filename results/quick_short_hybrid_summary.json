@@ -1,0 +1,55 @@
+{
+  "period": {
+    "start": "2024-01-01",
+    "end": "2025-04-30"
+  },
+  "rule": {
+    "moderate": "0.20 < lagged sentiment <= 0.30: short 1 day",
+    "strong": "lagged sentiment > 0.30: short 3 days",
+    "moderate_events": 14,
+    "strong_events": 11
+  },
+  "hybrid": {
+    "observations": 333,
+    "total_return": 0.07860101939973796,
+    "cagr": 0.058930975715050904,
+    "annualized_volatility": 0.0770218969368112,
+    "sharpe_ratio": 0.26210571325390264,
+    "sortino_ratio": 0.20713626900598495,
+    "max_drawdown": 0.0430821713698778,
+    "positive_day_rate": 0.06906906906906907,
+    "exposure": 0.12912912912912913,
+    "active_days": 43,
+    "active_day_hit_rate": 0.5348837209302325,
+    "total_turnover": 30.0,
+    "estimated_cost": 0.015,
+    "entries": 15
+  },
+  "baseline_0.20_one_day": {
+    "observations": 333,
+    "total_return": 0.053393110122766485,
+    "cagr": 0.040148850435669736,
+    "annualized_volatility": 0.06934792978132355,
+    "sharpe_ratio": 0.02492962743115051,
+    "sortino_ratio": 0.018390734457984798,
+    "max_drawdown": 0.041832805833928344,
+    "positive_day_rate": 0.042042042042042045,
+    "exposure": 0.07807807807807808,
+    "active_days": 26,
+    "active_day_hit_rate": 0.5384615384615384,
+    "total_turnover": 36.0,
+    "estimated_cost": 0.018,
+    "entries": 18
+  },
+  "aapl_buy_and_hold": {
+    "observations": 333,
+    "total_return": 0.1037240949462499,
+    "cagr": 0.07754394491662486,
+    "annualized_volatility": 0.30271784430550036,
+    "sharpe_ratio": 0.26393288822385735,
+    "sortino_ratio": 0.3602252189505673,
+    "max_drawdown": 0.3343371168249538,
+    "positive_day_rate": 0.5495495495495496
+  },
+  "warning": "Development diagnostic on previously examined data; not a fresh holdout."
+}
