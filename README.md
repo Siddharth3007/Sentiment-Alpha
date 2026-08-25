@@ -34,6 +34,7 @@ python quick_earnings_integration.py
 python quick_analyst_sentiment_overlay.py
 python full_analyst_sentiment_overlay.py
 python quick_llm_news_test.py
+python full_quantile_news_overlay.py
 python -m unittest discover -s tests
 ```
 
@@ -67,3 +68,8 @@ The selected rule—analyst sentiment above zero with a three-day hold—is also
 headlines with Qwen3-0.6B and compares the unchanged core/news strategy with the
 existing FinBERT version over October 1–November 27, 2024. It requires `torch` and
 `transformers`, and reads the original news CSV without modifying the source project.
+
+`full_quantile_news_overlay.py` replaces the fixed FinBERT cutoffs with fold-specific
+25th, 67th, and 84th percentiles calculated from nonzero-news days in each 132-day
+training window. The numerical thresholds are frozen throughout the following test
+fold; no test-window scores enter their calculation.

@@ -209,3 +209,37 @@ FinBERT with Qwen3-0.6B**. The small model's label calibration is poor, and the 
 window is both short and previously observed. A credible next experiment requires the
 4B instruct model, a calibration set labeled independently of returns, frozen prompts
 and thresholds, and a later untouched test period.
+
+## Training-only nonzero-news quantile thresholds
+
+The fixed FinBERT thresholds were replaced with fold-specific values calculated only
+from nonzero-news days in each 132-day training window:
+
+- Bad news: below the training 25th percentile.
+- Moderate good news: above the 67th and at or below the 84th percentile.
+- Very good news: above the 84th percentile.
+
+The percentile definitions remained fixed while their numerical score cutoffs changed
+between walk-forward folds. All technical filters, position rules, timing conventions,
+analyst-call rules, and five-basis-point transaction costs were unchanged.
+
+| Metric | Adaptive core + news | Fixed core + news | Adaptive + analyst | Fixed + analyst | AAPL |
+|---|---:|---:|---:|---:|---:|
+| Total return | 220.10% | **230.00%** | 244.02% | **251.54%** | 122.57% |
+| CAGR | 27.52% | **28.34%** | 29.46% | **30.04%** | 18.20% |
+| Sharpe ratio | 1.235 | **1.243** | **1.301** | 1.299 | 0.573 |
+| Sortino ratio | **1.914** | 1.913 | **2.024** | 2.004 | 0.841 |
+| Maximum drawdown | 18.01% | 18.01% | 18.01% | 18.01% | 33.43% |
+| Turnover | **247.5** | 259.5 | **253.5** | 266.5 | n/a |
+
+Adaptive thresholds slightly reduced returns and turnover. The analyst version's
+Sharpe increased by only 0.002, which is economically negligible. Daily incremental-
+return tests versus the fixed versions produced p-values of 0.884 for core/news and
+0.914 with the analyst overlay, providing no evidence that either construction was
+superior.
+
+Threshold stability was poor in the earliest folds because the source corpus contained
+only 14–81 nonzero-news days in the first five 132-day windows. Later windows generally
+contained 108–126 news days and produced much more plausible cutoffs. This exact test
+therefore answers the requested quantile specification but also confirms that an
+expanding-window or minimum-sample fallback would be required for a production design.
