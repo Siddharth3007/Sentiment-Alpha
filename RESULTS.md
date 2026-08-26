@@ -243,3 +243,38 @@ only 14–81 nonzero-news days in the first five 132-day windows. Later windows 
 contained 108–126 news days and produced much more plausible cutoffs. This exact test
 therefore answers the requested quantile specification but also confirms that an
 expanding-window or minimum-sample fallback would be required for a production design.
+
+## Full matched-period Qwen versus FinBERT comparison
+
+The local Qwen3-0.6B classifier was run over all 25,629 dated headline records (25,048
+unique anonymized headlines) available through November 27, 2024. The fair common
+walk-forward period therefore contains 1,103 OOS trading days from July 14, 2020 to
+November 27, 2024. Both classifiers received their own fold-specific q25/q67/q84
+thresholds estimated only from the preceding 132-day training window; dates,
+technical filters, position rules, analyst overlay, and five-basis-point costs were
+identical.
+
+| Metric | Qwen news | FinBERT news | Qwen + analyst | FinBERT + analyst | AAPL |
+|---|---:|---:|---:|---:|---:|
+| Total return | 108.39% | **232.23%** | 122.58% | **257.05%** | 146.06% |
+| CAGR | 18.26% | **31.56%** | 20.06% | **33.75%** | 22.84% |
+| Sharpe ratio | 0.783 | **1.435** | 0.854 | **1.505** | 0.721 |
+| Sortino ratio | 1.066 | **2.284** | 1.170 | **2.403** | 1.088 |
+| Maximum drawdown | 22.03% | **14.41%** | 22.05% | **14.06%** | 31.31% |
+| Turnover | **220.5** | 246.5 | **227.5** | 252.5 | n/a |
+
+Qwen labeled 18,720 headlines positive, 5,641 negative, and 1,268 neutral. The 73.0%
+positive rate confirms the bullish calibration problem observed in the short pilot;
+even Qwen's median training-window 25th-percentile score was positive at 0.417. Its
+quantile normalization therefore did not recover FinBERT's strategy performance.
+
+The paired Qwen-minus-FinBERT daily-return difference was -4.15 basis points per day
+for the news strategy and -4.21 basis points with the analyst overlay. Newey-West/HAC
+two-sided p-values were 0.150 and 0.145, respectively. Thus FinBERT was economically
+and numerically much better in this sample, but the paired difference does not clear
+the conventional 5% significance threshold.
+
+This remains a development-period comparison, and Qwen3-0.6B is only a small local
+proxy for the proposed Qwen3-4B-Instruct model. Pretraining-memory leakage cannot be
+fully excluded despite entity anonymization, and the technical parameters were
+inherited rather than recalibrated independently for Qwen.

@@ -1,0 +1,219 @@
+{
+  "period": {
+    "start": "2020-07-14",
+    "end": "2024-11-27",
+    "matched_oos_days": 1103,
+    "walk_forward_windows": 22,
+    "headline_records": 25629,
+    "unique_anonymized_headlines": 25048
+  },
+  "comparison_design": {
+    "qwen_model": "Qwen/Qwen3-0.6B",
+    "qwen_device": "mps",
+    "headline_classification": "anonymized headline-only, deterministic, no retrieval",
+    "daily_score": "mean of Positive=1, Neutral=0, Negative=-1 labels",
+    "model_specific_training_quantiles": [
+      0.25,
+      0.67,
+      0.84
+    ],
+    "threshold_population": "nonzero-news days in each 132-day training window",
+    "thresholds_frozen_within_test_fold": true,
+    "identical_technical_filters_positions_costs_and_dates": true,
+    "transaction_cost_bps_per_unit_turnover": 5.0
+  },
+  "constrained_label_validation": {
+    "observations": 333,
+    "agreement_with_generated_labels": 0.996996996996997,
+    "minimum_required_agreement": 0.98,
+    "generated_label_counts": {
+      "Positive": 279,
+      "Negative": 43,
+      "Neutral": 11
+    },
+    "constrained_label_counts": {
+      "Positive": 280,
+      "Negative": 43,
+      "Neutral": 10
+    }
+  },
+  "qwen_label_counts": {
+    "Positive": 18720,
+    "Negative": 5641,
+    "Neutral": 1268
+  },
+  "qwen_threshold_distribution": {
+    "nonzero_news_days": {
+      "min": 27.0,
+      "median": 131.0,
+      "max": 132.0
+    },
+    "bad_threshold": {
+      "min": 0.2661764705882353,
+      "median": 0.41712382445141066,
+      "max": 1.0
+    },
+    "moderate_threshold": {
+      "min": 0.533448275862069,
+      "median": 0.683509941520468,
+      "max": 1.0
+    },
+    "strong_threshold": {
+      "min": 0.6488970588235294,
+      "median": 0.7714296814296815,
+      "max": 1.0
+    }
+  },
+  "finbert_threshold_distribution": {
+    "nonzero_news_days": {
+      "min": 14.0,
+      "median": 120.5,
+      "max": 126.0
+    },
+    "bad_threshold": {
+      "min": -0.5,
+      "median": -0.024972330104845925,
+      "max": 0.0588235294117647
+    },
+    "moderate_threshold": {
+      "min": 0.11559663865546219,
+      "median": 0.21088669950738914,
+      "max": 1.0
+    },
+    "strong_threshold": {
+      "min": 0.2122222222222222,
+      "median": 0.2793023255813954,
+      "max": 1.0
+    }
+  },
+  "qwen": {
+    "events": {
+      "bad": 127,
+      "moderate": 32,
+      "strong": 41
+    },
+    "core_news": {
+      "observations": 1103,
+      "total_return": 1.0838728407720795,
+      "cagr": 0.18263794612926443,
+      "annualized_volatility": 0.18499357782921017,
+      "sharpe_ratio": 0.7834664505675596,
+      "sortino_ratio": 1.0663705758092028,
+      "max_drawdown": 0.22028361025952103,
+      "positive_day_rate": 0.5294650951949229,
+      "exposure": 1.0,
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5294650951949229,
+      "total_turnover": 220.5,
+      "estimated_cost": 0.11025,
+      "average_net_exposure": 0.38803263825929285,
+      "average_gross_exposure": 0.6110607434270172,
+      "days_at_core_0.5": 858,
+      "days_at_long_1.0": 122,
+      "days_at_short_minus_1.0": 123
+    },
+    "core_news_plus_analyst": {
+      "observations": 1103,
+      "total_return": 1.225838976821152,
+      "cagr": 0.20058008817156425,
+      "annualized_volatility": 0.1880201256497774,
+      "sharpe_ratio": 0.853959112913502,
+      "sortino_ratio": 1.1704020754334798,
+      "max_drawdown": 0.22048412532353256,
+      "positive_day_rate": 0.5294650951949229,
+      "exposure": 1.0,
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5294650951949229,
+      "total_turnover": 227.5,
+      "estimated_cost": 0.11375,
+      "average_net_exposure": 0.3957388939256573,
+      "average_gross_exposure": 0.6187669990933817,
+      "days_at_core_0.5": 841,
+      "days_at_long_1.0": 139,
+      "days_at_short_minus_1.0": 123
+    },
+    "analyst_qualifying_calls": 7
+  },
+  "finbert": {
+    "events": {
+      "bad": 88,
+      "moderate": 50,
+      "strong": 33
+    },
+    "core_news": {
+      "observations": 1103,
+      "total_return": 2.3222534752632225,
+      "cagr": 0.31562041619508374,
+      "annualized_volatility": 0.17380806752664102,
+      "sharpe_ratio": 1.435406289338692,
+      "sortino_ratio": 2.283787887380343,
+      "max_drawdown": 0.14408824433260792,
+      "positive_day_rate": 0.5367180417044425,
+      "exposure": 1.0,
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5367180417044425,
+      "total_turnover": 246.5,
+      "estimated_cost": 0.12325,
+      "average_net_exposure": 0.35811423390752495,
+      "average_gross_exposure": 0.599274705349048,
+      "days_at_core_0.5": 884,
+      "days_at_long_1.0": 86,
+      "days_at_short_minus_1.0": 133
+    },
+    "core_news_plus_analyst": {
+      "observations": 1103,
+      "total_return": 2.570474629381336,
+      "cagr": 0.33745780793270286,
+      "annualized_volatility": 0.1770612967930281,
+      "sharpe_ratio": 1.5052959569371864,
+      "sortino_ratio": 2.4030702220815776,
+      "max_drawdown": 0.14058650716527332,
+      "positive_day_rate": 0.5367180417044425,
+      "exposure": 1.0,
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5367180417044425,
+      "total_turnover": 252.5,
+      "estimated_cost": 0.12625,
+      "average_net_exposure": 0.3658204895738894,
+      "average_gross_exposure": 0.6069809610154125,
+      "days_at_core_0.5": 867,
+      "days_at_long_1.0": 103,
+      "days_at_short_minus_1.0": 133
+    },
+    "analyst_qualifying_calls": 7
+  },
+  "aapl_buy_and_hold": {
+    "observations": 1103,
+    "total_return": 1.4605797177345927,
+    "cagr": 0.22839904315932325,
+    "annualized_volatility": 0.2864995199769967,
+    "sharpe_ratio": 0.7214713957087501,
+    "sortino_ratio": 1.0875940196214788,
+    "max_drawdown": 0.31311466402944566,
+    "positive_day_rate": 0.527651858567543
+  },
+  "paired_qwen_minus_finbert_hac_tests": {
+    "core_news": {
+      "observations": 1103,
+      "max_lags": 6,
+      "mean_daily_difference": -0.00041487671216626883,
+      "annualized_mean_difference": -0.10454893146589975,
+      "t_statistic": -1.4402835799695335,
+      "p_value_two_sided": 0.1500712162044153
+    },
+    "core_news_plus_analyst": {
+      "observations": 1103,
+      "max_lags": 6,
+      "mean_daily_difference": -0.00042050854953504474,
+      "annualized_mean_difference": -0.10596815448283127,
+      "t_statistic": -1.4596769751377316,
+      "p_value_two_sided": 0.14466386847622537
+    }
+  },
+  "warnings": [
+    "Historical development-period comparison, not an untouched holdout.",
+    "Qwen3-0.6B is a small local proxy, not Qwen3-4B-Instruct-2507.",
+    "Model pretraining may contain historical event knowledge despite entity anonymization.",
+    "Technical parameters were inherited from the existing research process rather than recalibrated separately for Qwen."
+  ]
+}

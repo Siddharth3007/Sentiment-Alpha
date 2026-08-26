@@ -35,6 +35,7 @@ python quick_analyst_sentiment_overlay.py
 python full_analyst_sentiment_overlay.py
 python quick_llm_news_test.py
 python full_quantile_news_overlay.py
+python full_llm_quantile_comparison.py
 python -m unittest discover -s tests
 ```
 
@@ -73,3 +74,9 @@ existing FinBERT version over October 1–November 27, 2024. It requires `torch`
 25th, 67th, and 84th percentiles calculated from nonzero-news days in each 132-day
 training window. The numerical thresholds are frozen throughout the following test
 fold; no test-window scores enter their calculation.
+
+`full_llm_quantile_comparison.py` performs the matched-history classifier comparison.
+It locally labels anonymized headlines with Qwen3-0.6B, derives separate training-only
+quantile thresholds for Qwen and FinBERT, and holds dates, technical filters, exposure
+rules, analyst overlay, and costs constant. Inference is resumable through a hash-and-
+label cache; raw headline text is not written to the result artifacts.
