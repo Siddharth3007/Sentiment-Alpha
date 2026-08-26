@@ -21,6 +21,7 @@ STEP = 50
 SMA_WINDOWS = (10, 20, 30)
 RSI_THRESHOLDS = (40, 45, 50, 55, 60)
 TRANSACTION_COST_BPS = 5.0
+DATA_END = pd.Timestamp("2024-11-27")
 
 
 def load_data(path: Path) -> pd.DataFrame:
@@ -31,6 +32,9 @@ def load_data(path: Path) -> pd.DataFrame:
         raise ValueError(f"Missing columns: {sorted(missing)}")
     data = data.loc[:, ["date", "close", "news_score"]].copy()
     data = data.drop_duplicates("date").sort_values("date").reset_index(drop=True)
+    # The raw headline archive ends on this date. Later price rows contain
+    # zero-filled sentiment and are excluded from every research result.
+    data = data[data["date"].le(DATA_END)].reset_index(drop=True)
     data["close"] = pd.to_numeric(data["close"], errors="raise")
     data["news_score"] = pd.to_numeric(data["news_score"], errors="coerce").fillna(0.0)
     return data
@@ -71,12 +75,16 @@ def run_walk_forward(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd
     start = 0
     window_id = 0
 
-    while start + TRAIN_WINDOW + TEST_WINDOW <= len(data):
+    overlap = TEST_WINDOW - STEP
+    # Retain the final partial fold when it contributes dates not already covered
+    # by the preceding overlapping test window. This reaches DATA_END without
+    # requiring prices or sentiment from later dates.
+    while start + TRAIN_WINDOW + overlap < len(data):
         window_id += 1
         train_start = start
         train_end = start + TRAIN_WINDOW
         test_start = train_end
-        test_end = test_start + TEST_WINDOW
+        test_end = min(test_start + TEST_WINDOW, len(data))
 
         best, candidates = calibrate(data, train_start, train_end)
         for candidate in candidates:
@@ -144,6 +152,7 @@ def build_summary(windows: pd.DataFrame, stitched: pd.DataFrame) -> dict:
         "method": {
             "train_window": TRAIN_WINDOW,
             "test_window": TEST_WINDOW,
+            "final_test_window_may_be_partial": True,
             "step": STEP,
             "overlap_policy": "Earliest prediction retained for overlapping test dates",
             "transaction_cost_bps_per_unit_turnover": TRANSACTION_COST_BPS,

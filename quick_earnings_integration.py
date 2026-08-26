@@ -9,11 +9,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from quick_core_overlay import build_overlay_positions
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 START = pd.Timestamp("2022-01-01")
-END = pd.Timestamp("2024-12-31")
+END = DATA_END
 COST_PER_TURNOVER = 5 / 10_000
 EARNINGS_HOLDING_DAYS = 3
 
@@ -160,4 +161,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

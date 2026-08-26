@@ -8,11 +8,12 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 START = pd.Timestamp("2024-01-01")
-END = pd.Timestamp("2025-04-30")
+END = DATA_END
 COST_PER_TURNOVER = 5 / 10_000
 
 
@@ -84,7 +85,7 @@ def main() -> None:
     plt.plot(output["date"], output["one_day_equity"], label="Short only — 1 day")
     plt.plot(output["date"], output["three_day_equity"], label="Short only — 3 days")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.75)
-    plt.title("Quick short-only diagnostic: 2024-01 through 2025-04")
+    plt.title("Quick short-only diagnostic: Jan–Nov 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()
@@ -96,4 +97,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

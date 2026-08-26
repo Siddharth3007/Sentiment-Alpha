@@ -19,16 +19,15 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from quick_core_overlay import build_overlay_positions
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 MODEL_ID = "Qwen/Qwen3-0.6B"
 START = pd.Timestamp("2024-10-01")
-END = pd.Timestamp("2024-11-27")
+END = DATA_END
 COST_PER_TURNOVER = 5 / 10_000
-DEFAULT_SOURCE = Path(
-    "/Users/siddharth/PycharmProjects/TradingStrategy v1/data/apple_news_data.csv"
-)
+DEFAULT_SOURCE = Path("data/apple_news_data.csv")
 LABELS = ("Positive", "Negative", "Neutral")
 
 

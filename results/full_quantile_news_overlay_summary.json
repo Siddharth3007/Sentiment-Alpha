@@ -1,9 +1,9 @@
 {
   "period": {
     "start": "2020-07-14",
-    "end": "2025-04-30",
-    "observations": 1206,
-    "walk_forward_windows": 24
+    "end": "2024-11-27",
+    "observations": 1103,
+    "walk_forward_windows": 22
   },
   "adaptive_rule": {
     "threshold_population": "nonzero-news days in the fold's 132-day training window",
@@ -24,129 +24,129 @@
   "training_threshold_distribution": {
     "nonzero_news_days": {
       "min": 14.0,
-      "median": 119.5,
+      "median": 120.5,
       "max": 126.0
     },
     "bad_threshold": {
       "min": -0.5,
-      "median": -0.017244044449787863,
-      "max": 0.06562499999999995
+      "median": -0.024972330104845925,
+      "max": 0.0588235294117647
     },
     "moderate_threshold": {
       "min": 0.11559663865546219,
-      "median": 0.2154347826086957,
+      "median": 0.21088669950738914,
       "max": 1.0
     },
     "strong_threshold": {
       "min": 0.2122222222222222,
-      "median": 0.28285714285714286,
+      "median": 0.2793023255813954,
       "max": 1.0
     }
   },
   "events": {
-    "bad_news": 89,
+    "bad_news": 88,
     "moderate_good_news": 50,
     "very_good_news": 33
   },
   "adaptive_core_news": {
-    "observations": 1206,
-    "total_return": 2.201014852373532,
-    "cagr": 0.2752123269784459,
-    "annualized_volatility": 0.177256690293997,
-    "sharpe_ratio": 1.234671414633577,
-    "sortino_ratio": 1.9135455753750485,
-    "max_drawdown": 0.18006504845532267,
-    "positive_day_rate": 0.5381426202321725,
+    "observations": 1103,
+    "total_return": 2.3222534752632225,
+    "cagr": 0.31562041619508374,
+    "annualized_volatility": 0.17380806752664102,
+    "sharpe_ratio": 1.435406289338692,
+    "sortino_ratio": 2.283787887380343,
+    "max_drawdown": 0.14408824433260792,
+    "positive_day_rate": 0.5367180417044425,
     "exposure": 1.0,
-    "active_days": 1206,
-    "active_day_hit_rate": 0.5381426202321725,
-    "total_turnover": 247.5,
-    "estimated_cost": 0.12375,
-    "average_net_exposure": 0.3706467661691542,
-    "average_gross_exposure": 0.5912106135986733,
-    "days_at_core_0.5": 986,
-    "days_at_long_1.0": 87,
+    "active_days": 1103,
+    "active_day_hit_rate": 0.5367180417044425,
+    "total_turnover": 246.5,
+    "estimated_cost": 0.12325,
+    "average_net_exposure": 0.35811423390752495,
+    "average_gross_exposure": 0.599274705349048,
+    "days_at_core_0.5": 884,
+    "days_at_long_1.0": 86,
     "days_at_short_minus_1.0": 133
   },
   "adaptive_core_news_plus_analyst": {
-    "observations": 1206,
-    "total_return": 2.440177699796673,
-    "cagr": 0.29455759539331017,
-    "annualized_volatility": 0.18018797708691736,
-    "sharpe_ratio": 1.3010997120976369,
-    "sortino_ratio": 2.024300415038268,
-    "max_drawdown": 0.180065048455323,
-    "positive_day_rate": 0.5381426202321725,
+    "observations": 1103,
+    "total_return": 2.570474629381336,
+    "cagr": 0.33745780793270286,
+    "annualized_volatility": 0.1770612967930281,
+    "sharpe_ratio": 1.5052959569371864,
+    "sortino_ratio": 2.4030702220815776,
+    "max_drawdown": 0.14058650716527332,
+    "positive_day_rate": 0.5367180417044425,
     "exposure": 1.0,
-    "active_days": 1206,
-    "active_day_hit_rate": 0.5381426202321725,
-    "total_turnover": 253.5,
-    "estimated_cost": 0.12675,
-    "average_net_exposure": 0.3776948590381426,
-    "average_gross_exposure": 0.5982587064676617,
-    "days_at_core_0.5": 969,
-    "days_at_long_1.0": 104,
+    "active_days": 1103,
+    "active_day_hit_rate": 0.5367180417044425,
+    "total_turnover": 252.5,
+    "estimated_cost": 0.12625,
+    "average_net_exposure": 0.3658204895738894,
+    "average_gross_exposure": 0.6069809610154125,
+    "days_at_core_0.5": 867,
+    "days_at_long_1.0": 103,
     "days_at_short_minus_1.0": 133
   },
   "analyst_qualifying_calls": 7,
   "fixed_threshold_comparisons": {
     "fixed_core_news": {
-      "observations": 1206,
-      "total_return": 2.3000395599039187,
-      "cagr": 0.2833564104061008,
-      "annualized_volatility": 0.1818755669625352,
-      "sharpe_ratio": 1.2428916627443471,
-      "sortino_ratio": 1.9126155936147315,
-      "max_drawdown": 0.18006504845532345,
-      "positive_day_rate": 0.538971807628524,
+      "observations": 1103,
+      "total_return": 2.4250287493253886,
+      "cagr": 0.3248099048258417,
+      "annualized_volatility": 0.17894450785547006,
+      "sharpe_ratio": 1.4381843940119474,
+      "sortino_ratio": 2.2642678657681383,
+      "max_drawdown": 0.10709272828192706,
+      "positive_day_rate": 0.5376246600181324,
       "exposure": 1.0,
-      "active_days": 1206,
-      "active_day_hit_rate": 0.538971807628524,
-      "total_turnover": 259.5,
-      "estimated_cost": 0.12975,
-      "average_net_exposure": 0.3482587064676617,
-      "average_gross_exposure": 0.6003316749585407,
-      "days_at_core_0.5": 964,
-      "days_at_long_1.0": 90,
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5376246600181324,
+      "total_turnover": 258.5,
+      "estimated_cost": 0.12925,
+      "average_net_exposure": 0.33363553943789664,
+      "average_gross_exposure": 0.6092475067996374,
+      "days_at_core_0.5": 862,
+      "days_at_long_1.0": 89,
       "days_at_short_minus_1.0": 152
     },
     "fixed_core_news_plus_analyst": {
-      "observations": 1206,
-      "total_return": 2.515417855438533,
-      "cagr": 0.3004232834018623,
-      "annualized_volatility": 0.18462822789290315,
-      "sharpe_ratio": 1.298689284815514,
-      "sortino_ratio": 2.0037599801453463,
-      "max_drawdown": 0.18006504845532323,
-      "positive_day_rate": 0.538971807628524,
+      "observations": 1103,
+      "total_return": 2.648564510274944,
+      "cagr": 0.3440851778384775,
+      "annualized_volatility": 0.18199034223433852,
+      "sharpe_ratio": 1.4965616008796554,
+      "sortino_ratio": 2.3611685940849596,
+      "max_drawdown": 0.10343963371971898,
+      "positive_day_rate": 0.5376246600181324,
       "exposure": 1.0,
-      "active_days": 1206,
-      "active_day_hit_rate": 0.538971807628524,
-      "total_turnover": 266.5,
-      "estimated_cost": 0.13325,
-      "average_net_exposure": 0.35447761194029853,
-      "average_gross_exposure": 0.6065505804311775
+      "active_days": 1103,
+      "active_day_hit_rate": 0.5376246600181324,
+      "total_turnover": 265.5,
+      "estimated_cost": 0.13275,
+      "average_net_exposure": 0.34043517679057117,
+      "average_gross_exposure": 0.6160471441523119
     }
   },
   "paired_daily_increment_tests_vs_fixed": {
     "adaptive_core_news": {
-      "t_statistic": -0.14583078909822444,
-      "p_value_two_sided": 0.884079359866127
+      "t_statistic": -0.14582525856192477,
+      "p_value_two_sided": 0.8840860043057046
     },
     "adaptive_core_news_plus_analyst": {
-      "t_statistic": -0.10751341505329287,
-      "p_value_two_sided": 0.914399580798558
+      "t_statistic": -0.10750929723930146,
+      "p_value_two_sided": 0.9144045192674171
     }
   },
   "aapl_buy_and_hold": {
-    "observations": 1206,
-    "total_return": 1.2256552590925067,
-    "cagr": 0.1819609879100561,
-    "annualized_volatility": 0.30012737956016017,
-    "sharpe_ratio": 0.5732079429573104,
-    "sortino_ratio": 0.8405637342267445,
-    "max_drawdown": 0.33433711682495393,
-    "positive_day_rate": 0.5298507462686567
+    "observations": 1103,
+    "total_return": 1.4605797177345927,
+    "cagr": 0.22839904315932325,
+    "annualized_volatility": 0.2864995199769967,
+    "sharpe_ratio": 0.7214713957087501,
+    "sortino_ratio": 1.0875940196214788,
+    "max_drawdown": 0.31311466402944566,
+    "positive_day_rate": 0.527651858567543
   },
   "warning": "Historical development-period comparison. Quantile levels were proposed after examining the original score distribution and are not an untouched validation."
 }

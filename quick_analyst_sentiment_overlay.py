@@ -9,11 +9,12 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from quick_core_overlay import build_overlay_positions
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 START = pd.Timestamp("2022-01-01")
-END = pd.Timestamp("2024-12-31")
+END = DATA_END
 COST_PER_TURNOVER = 5 / 10_000
 PARAMETERS = ((0.00, 1), (0.00, 3), (0.05, 1), (0.05, 3))
 

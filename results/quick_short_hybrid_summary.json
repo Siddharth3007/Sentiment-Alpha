@@ -1,7 +1,7 @@
 {
   "period": {
     "start": "2024-01-01",
-    "end": "2025-04-30"
+    "end": "2024-11-27"
   },
   "rule": {
     "moderate": "0.20 < lagged sentiment <= 0.30: short 1 day",
@@ -10,15 +10,15 @@
     "strong_events": 11
   },
   "hybrid": {
-    "observations": 333,
+    "observations": 230,
     "total_return": 0.07860101939973796,
-    "cagr": 0.058930975715050904,
-    "annualized_volatility": 0.0770218969368112,
-    "sharpe_ratio": 0.26210571325390264,
-    "sortino_ratio": 0.20713626900598495,
+    "cagr": 0.08643571980153086,
+    "annualized_volatility": 0.09268917797545598,
+    "sharpe_ratio": 0.5085985516486861,
+    "sortino_ratio": 0.4836927757464284,
     "max_drawdown": 0.0430821713698778,
-    "positive_day_rate": 0.06906906906906907,
-    "exposure": 0.12912912912912913,
+    "positive_day_rate": 0.1,
+    "exposure": 0.18695652173913044,
     "active_days": 43,
     "active_day_hit_rate": 0.5348837209302325,
     "total_turnover": 30.0,
@@ -26,15 +26,15 @@
     "entries": 15
   },
   "baseline_0.20_one_day": {
-    "observations": 333,
+    "observations": 230,
     "total_return": 0.053393110122766485,
-    "cagr": 0.040148850435669736,
-    "annualized_volatility": 0.06934792978132355,
-    "sharpe_ratio": 0.02492962743115051,
-    "sortino_ratio": 0.018390734457984798,
+    "cagr": 0.058647317405364996,
+    "annualized_volatility": 0.08347272899170327,
+    "sharpe_ratio": 0.2445837293327538,
+    "sortino_ratio": 0.21718106563926348,
     "max_drawdown": 0.041832805833928344,
-    "positive_day_rate": 0.042042042042042045,
-    "exposure": 0.07807807807807808,
+    "positive_day_rate": 0.06086956521739131,
+    "exposure": 0.11304347826086956,
     "active_days": 26,
     "active_day_hit_rate": 0.5384615384615384,
     "total_turnover": 36.0,
@@ -42,14 +42,14 @@
     "entries": 18
   },
   "aapl_buy_and_hold": {
-    "observations": 333,
-    "total_return": 0.1037240949462499,
-    "cagr": 0.07754394491662486,
-    "annualized_volatility": 0.30271784430550036,
-    "sharpe_ratio": 0.26393288822385735,
-    "sortino_ratio": 0.3602252189505673,
-    "max_drawdown": 0.3343371168249538,
-    "positive_day_rate": 0.5495495495495496
+    "observations": 230,
+    "total_return": 0.22022541941516094,
+    "cagr": 0.24367884851972632,
+    "annualized_volatility": 0.23224330210682384,
+    "sharpe_ratio": 0.8821803368014697,
+    "sortino_ratio": 1.3931634585751205,
+    "max_drawdown": 0.1546264986166609,
+    "positive_day_rate": 0.5478260869565217
   },
   "warning": "Development diagnostic on previously examined data; not a fresh holdout."
 }

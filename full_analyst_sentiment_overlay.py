@@ -67,11 +67,8 @@ def main() -> None:
     comparison.loc[comparison["date"] < pd.Timestamp("2022-01-01"), "segment"] = (
         "pre_selection_2020_2021"
     )
-    comparison.loc[
-        comparison["date"].between("2022-01-01", "2024-12-31"), "segment"
-    ] = "parameter_selection_2022_2024"
-    comparison.loc[comparison["date"] > pd.Timestamp("2024-12-31"), "segment"] = (
-        "post_selection_2025_partial"
+    comparison.loc[comparison["date"] >= pd.Timestamp("2022-01-01"), "segment"] = (
+        "parameter_selection_2022_2024"
     )
     segment_results = {}
     for segment, rows in comparison.groupby("segment", sort=False):

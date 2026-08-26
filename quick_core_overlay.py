@@ -8,11 +8,12 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 START = pd.Timestamp("2024-01-01")
-END = pd.Timestamp("2025-04-30")
+END = DATA_END
 COST_PER_TURNOVER = 5 / 10_000
 
 
@@ -136,7 +137,7 @@ def main() -> None:
     plt.plot(output["date"], output["overlay_equity"], label="50% core + news overlay", linewidth=2)
     plt.plot(output["date"], output["core_equity"], label="Passive 50% AAPL")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.75)
-    plt.title("Core-plus-news overlay diagnostic: Jan 2024–Apr 2025")
+    plt.title("Core-plus-news overlay diagnostic: Jan–Nov 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()
@@ -148,4 +149,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -37,11 +37,11 @@ from quick_llm_news_test import (
     daily_scores,
     load_headlines,
 )
-from run_backtest import load_data
+from run_backtest import DATA_END, load_data
 from strategy import performance_metrics
 
 
-END = pd.Timestamp("2024-11-27")
+END = DATA_END
 LABEL_VALUE = {"Positive": 1.0, "Negative": -1.0, "Neutral": 0.0}
 DEFAULT_BATCH_SIZE = 12
 DEFAULT_CHECKPOINT_EVERY = 1_000

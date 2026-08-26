@@ -1,7 +1,7 @@
 {
   "period": {
     "start": "2022-01-01",
-    "end": "2024-12-31"
+    "end": "2024-11-27"
   },
   "earnings_calls_available": 12,
   "earnings_rule": {
@@ -114,48 +114,48 @@
     }
   ],
   "core_news_plus_earnings": {
-    "observations": 753,
-    "total_return": 1.0220570216325102,
-    "cagr": 0.26571880619862087,
-    "annualized_volatility": 0.16795657425391597,
-    "sharpe_ratio": 1.249076811635221,
-    "sortino_ratio": 1.9614688000007385,
+    "observations": 731,
+    "total_return": 0.9496797482392147,
+    "cagr": 0.25880941312236394,
+    "annualized_volatility": 0.16986426526165674,
+    "sharpe_ratio": 1.2046757203496958,
+    "sortino_ratio": 1.9021870678850572,
     "max_drawdown": 0.09030806361796695,
-    "positive_day_rate": 0.5378486055776892,
+    "positive_day_rate": 0.5321477428180574,
     "exposure": 1.0,
-    "active_days": 753,
-    "active_day_hit_rate": 0.5378486055776892,
-    "total_turnover": 187.0,
-    "estimated_cost": 0.0935,
-    "average_net_exposure": 0.3791500664010624,
-    "average_gross_exposure": 0.6102257636122178
-  },
-  "core_news_without_earnings": {
-    "observations": 753,
-    "total_return": 1.1067730248747791,
-    "cagr": 0.2832236474199519,
-    "annualized_volatility": 0.1650818047965137,
-    "sharpe_ratio": 1.3511169609242493,
-    "sortino_ratio": 2.2151664399699835,
-    "max_drawdown": 0.10709272828192717,
-    "positive_day_rate": 0.5391766268260292,
-    "exposure": 1.0,
-    "active_days": 753,
-    "active_day_hit_rate": 0.5391766268260292,
+    "active_days": 731,
+    "active_day_hit_rate": 0.5321477428180574,
     "total_turnover": 186.0,
     "estimated_cost": 0.093,
-    "average_net_exposure": 0.34462151394422313,
-    "average_gross_exposure": 0.599601593625498
+    "average_net_exposure": 0.3748290013679891,
+    "average_gross_exposure": 0.612859097127223
+  },
+  "core_news_without_earnings": {
+    "observations": 731,
+    "total_return": 1.0313634367337512,
+    "cagr": 0.27674635888550214,
+    "annualized_volatility": 0.166937547659748,
+    "sharpe_ratio": 1.3075812928060895,
+    "sortino_ratio": 2.1558491077878417,
+    "max_drawdown": 0.10709272828192717,
+    "positive_day_rate": 0.533515731874145,
+    "exposure": 1.0,
+    "active_days": 731,
+    "active_day_hit_rate": 0.533515731874145,
+    "total_turnover": 185.0,
+    "estimated_cost": 0.0925,
+    "average_net_exposure": 0.3392612859097127,
+    "average_gross_exposure": 0.6019151846785226
   },
   "aapl_buy_and_hold": {
-    "observations": 753,
-    "total_return": 0.41026074224251774,
-    "cagr": 0.12192737511557294,
-    "annualized_volatility": 0.27111045520340205,
-    "sharpe_ratio": 0.4119755283484241,
-    "sortino_ratio": 0.6217888382601624,
+    "observations": 731,
+    "total_return": 0.323027538435567,
+    "cagr": 0.10130810532241563,
+    "annualized_volatility": 0.2737314915169646,
+    "sharpe_ratio": 0.3428186447263733,
+    "sortino_ratio": 0.5197210936392678,
     "max_drawdown": 0.3131146640294452,
-    "positive_day_rate": 0.5298804780876494
+    "positive_day_rate": 0.5239398084815321
   },
   "warning": "Small historical development test with only 12 calls; not independent validation."
 }

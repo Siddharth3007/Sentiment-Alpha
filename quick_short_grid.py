@@ -9,11 +9,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from run_backtest import DATA_END
 from strategy import performance_metrics
 
 
 START = pd.Timestamp("2024-01-01")
-END = pd.Timestamp("2025-04-30")
+END = DATA_END
 HOLDING_PERIODS = (1, 2, 3, 5)
 SENTIMENT_THRESHOLDS = (0.10, 0.20, 0.30)
 COST_PER_TURNOVER = 5 / 10_000
@@ -70,7 +71,7 @@ def save_heatmap(grid: pd.DataFrame, path: Path) -> None:
     ax.set_yticks(range(len(pivot.index)), labels=[f"{x:.2f}" for x in pivot.index])
     ax.set_xlabel("Holding period (trading days)")
     ax.set_ylabel("Positive-news threshold")
-    ax.set_title("Short-only net return, Jan 2024–Apr 2025")
+    ax.set_title("Short-only net return, Jan–Nov 2024")
     for row in range(values.shape[0]):
         for col in range(values.shape[1]):
             ax.text(col, row, f"{values[row, col]:.1f}%", ha="center", va="center")
@@ -115,4 +116,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
