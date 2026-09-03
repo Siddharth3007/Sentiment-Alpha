@@ -14,6 +14,7 @@ trading system.
 | Deduplicated OOS period | 2020-07-14 to 2024-11-27 |
 | OOS observations | 1,103 |
 | Walk-forward folds | 22 |
+| Qwen headline records | 25,629 dated / 25,048 unique |
 | Training window | 132 trading days |
 | Test window | Up to 56 trading days |
 | Step | 50 trading days |
@@ -39,10 +40,11 @@ The primary reported construction is implemented in
   three returns. News shorts retain priority.
 
 Quantiles use only nonzero-news observations from the preceding training fold and are
-frozen during its test fold. SMA length and RSI threshold are also selected using
-training data only. News is lagged before signal formation, positions are entered at
-the following close, and costs are deducted from daily returns before metrics are
-calculated.
+frozen during its test fold. The overlay inherits each fold's SMA length and RSI
+threshold from the base-strategy training calibration; those technical parameters are
+not re-optimized for the overlay. News is lagged before signal formation, positions are
+entered at the following close, and costs are deducted from daily returns before
+metrics are calculated.
 
 ## Repository layout
 
@@ -95,28 +97,36 @@ python full_llm_quantile_comparison.py --source /path/to/apple_news_data.csv
 ```
 
 Inference is checkpointed by anonymized headline hash. If the model or prompt changes,
-use a new cache rather than reusing labels produced by the previous configuration.
+delete or rename `results/full_llm_qwen3_0_6b_label_cache.csv` before rerunning; the
+cache key does not currently include the model or prompt version.
 
 ## Primary result
 
-All figures below use the common 1,103-day endpoint and include modeled transaction
-costs.
+All figures below use the common 1,103-day endpoint. Strategy returns include modeled
+transaction costs; buy-and-hold excludes an initial purchase cost. Sharpe and Sortino
+use 252 trading days and a 4% annual risk-free rate.
 
-| Metric | FinBERT news + analyst | AAPL buy and hold |
-|---|---:|---:|
-| Total return | 257.05% | 146.06% |
-| CAGR | 33.75% | 22.84% |
-| Sharpe ratio | 1.505 | 0.721 |
-| Sortino ratio | 2.403 | 1.088 |
-| Maximum drawdown | 14.06% | 31.31% |
+| Metric | FinBERT news | FinBERT + analyst | Qwen + analyst | AAPL buy and hold |
+|---|---:|---:|---:|---:|
+| Total return | 232.23% | **257.05%** | 122.58% | 146.06% |
+| CAGR | 31.56% | **33.75%** | 20.06% | 22.84% |
+| Sharpe ratio | 1.435 | **1.505** | 0.854 | 0.721 |
+| Sortino ratio | 2.284 | **2.403** | 1.170 | 1.088 |
+| Maximum drawdown | 14.41% | **14.06%** | 22.05% | 31.31% |
+
+Qwen3-0.6B labeled 73.0% of headline records positive and produced a materially lower
+matched-period Sharpe than FinBERT. The paired Qwen-minus-FinBERT HAC test with the
+analyst overlay returned `p=0.145`, so the numerical difference is not statistically
+significant at 5%.
 
 The AAPL study is a historical development result, not an untouched validation. Signal
 rules and overlay choices were influenced by earlier diagnostics on overlapping data.
-See `RESULTS.md` for the classifier benchmark, statistical tests, and limitations.
+Only seven earnings calls qualified for the analyst overlay. See `RESULTS.md` for the
+classifier benchmark, statistical tests, and additional limitations.
 
 ## Data provenance
 
 `data/aapl_news_scores.csv` is a compact extraction of aligned AAPL prices and daily
 FinBERT scores from Trading Strategy v1. `data/aapl_earnings_features.csv` is a compact
 extraction of earnings-call features from Trading Strategy v2. The source projects were
-read-only and were not modified.
+read-only and were not modified. Raw headlines are not redistributed in this repository.
