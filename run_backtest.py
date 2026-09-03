@@ -32,8 +32,6 @@ def load_data(path: Path) -> pd.DataFrame:
         raise ValueError(f"Missing columns: {sorted(missing)}")
     data = data.loc[:, ["date", "close", "news_score"]].copy()
     data = data.drop_duplicates("date").sort_values("date").reset_index(drop=True)
-    # The raw headline archive ends on this date. Later price rows contain
-    # zero-filled sentiment and are excluded from every research result.
     data = data[data["date"].le(DATA_END)].reset_index(drop=True)
     data["close"] = pd.to_numeric(data["close"], errors="raise")
     data["news_score"] = pd.to_numeric(data["news_score"], errors="coerce").fillna(0.0)
@@ -76,9 +74,6 @@ def run_walk_forward(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd
     window_id = 0
 
     overlap = TEST_WINDOW - STEP
-    # Retain the final partial fold when it contributes dates not already covered
-    # by the preceding overlapping test window. This reaches DATA_END without
-    # requiring prices or sentiment from later dates.
     while start + TRAIN_WINDOW + overlap < len(data):
         window_id += 1
         train_start = start
@@ -124,11 +119,8 @@ def run_walk_forward(data: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame, pd
     windows = pd.DataFrame(window_rows)
     calibration = pd.DataFrame(calibration_rows)
     all_oos = pd.concat(oos_parts, ignore_index=True)
-    # Test windows overlap by six days. Keep the earliest genuine OOS prediction for each date.
     stitched = all_oos.sort_values(["date", "window"]).drop_duplicates("date", keep="first")
     stitched = stitched.sort_values("date").reset_index(drop=True)
-    # Recompute costs after stitching so parameter changes at window boundaries
-    # are charged against the position actually retained on the preceding date.
     stitched["turnover"] = stitched["position"].diff().abs()
     stitched.loc[0, "turnover"] = abs(stitched.loc[0, "position"])
     stitched["transaction_cost"] = stitched["turnover"] * TRANSACTION_COST_BPS / 10_000

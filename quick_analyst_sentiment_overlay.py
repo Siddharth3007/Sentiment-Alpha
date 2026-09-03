@@ -38,8 +38,6 @@ def add_analyst_long_overrides(
         if len(post_call_closes) == 0:
             continue
         first_post_call_close = int(post_call_closes[0])
-        # Assume an after-hours call and enter at the first subsequent close.
-        # Consequently, the first return earned is the next close-to-close return.
         start = first_post_call_close + 1
         stop = min(start + holding_days, len(positions))
         if start >= len(positions):
@@ -185,7 +183,7 @@ def main() -> None:
             alpha=0.85,
         )
     plt.plot(daily["date"], daily["benchmark_equity"], label="AAPL buy & hold", alpha=0.65)
-    plt.title("Analyst-only earnings overlay diagnostic: 2022–2024")
+    plt.title("Analyst-only earnings overlay diagnostic: 2022-2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend(ncol=2, fontsize=8.5)

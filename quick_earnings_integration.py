@@ -37,8 +37,6 @@ def add_earnings_overrides(
         if len(post_call_closes) == 0:
             continue
         first_post_call_close = int(post_call_closes[0])
-        # Enter only at the first post-call close. The first return earned is therefore
-        # the following close-to-close return, avoiding the overnight announcement jump.
         start = first_post_call_close + 1
         stop = min(start + EARNINGS_HOLDING_DAYS, len(result))
         if start >= len(result):
@@ -149,7 +147,7 @@ def main() -> None:
     plt.plot(output["date"], output["earnings_equity"], label="Core + news + earnings", linewidth=2)
     plt.plot(output["date"], output["baseline_equity"], label="Core + news")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.75)
-    plt.title("Small earnings-integration diagnostic: 2022–2024")
+    plt.title("Small earnings-integration diagnostic: 2022-2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()

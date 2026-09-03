@@ -12,4 +12,4 @@ The compact price file is trimmed to 2024-11-27, the final date covered by the r
 headline archive. The loader independently enforces the same hard cutoff so later rows
 cannot be interpreted as observed neutral news if the input is replaced.
 
-`aapl_earnings_features.csv` is a compact read-only extraction from Trading Strategy v2's generated earnings workbook. It includes the call date, SUE, SUR, overall Q&A sentiment, analyst sentiment, executive sentiment, and tone dispersion for 56 Apple calls from 2011–2024.
+`aapl_earnings_features.csv` is a compact read-only extraction from Trading Strategy v2's generated earnings workbook. It includes the call date, SUE, SUR, overall Q&A sentiment, analyst sentiment, executive sentiment, and tone dispersion for 56 Apple calls from 2011-2024.

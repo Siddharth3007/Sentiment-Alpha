@@ -1,11 +1,10 @@
 # Sentiment Alpha
 
-Point-in-time research infrastructure for evaluating equity strategies built from
-financial-news sentiment, earnings-call sentiment, and technical state variables.
-The repository contains an AAPL case study; it is a research backtester, not a live
-trading system.
+Sentiment Alpha is a Python research project I built to test whether news and
+earnings-call sentiment can be combined with simple technical signals. The current
+case study uses AAPL. This is a backtesting project, not a live trading system.
 
-## Research boundary
+## Scope
 
 | Field | Value |
 |---|---|
@@ -24,10 +23,9 @@ The compact input ends on 2024-11-27, and `run_backtest.load_data` independently
 enforces the same cutoff. The last test fold is partial so the OOS series can end at
 the data boundary without using later prices.
 
-## Canonical strategy
+## Main strategy
 
-The primary reported construction is implemented in
-`full_quantile_news_overlay.py`:
+The reported strategy is implemented in `full_quantile_news_overlay.py`:
 
 - Normal exposure: `+0.5` AAPL.
 - Bad-news recovery: prior score below the training-window q25, with price above SMA
@@ -46,7 +44,7 @@ not re-optimized for the overlay. News is lagged before signal formation, positi
 entered at the following close, and costs are deducted from daily returns before
 metrics are calculated.
 
-## Repository layout
+## Files
 
 | Path | Purpose |
 |---|---|
@@ -61,9 +59,9 @@ metrics are calculated.
 | `results/` | Daily audit trails, summaries, thresholds, labels, and plots |
 | `tests/` | Timing, leakage, threshold, and integration tests |
 
-## Environment
+## Setup
 
-Base backtests:
+For the base backtests:
 
 ```bash
 python -m venv .venv
@@ -71,13 +69,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Local Qwen diagnostics additionally require:
+The local Qwen scripts also require:
 
 ```bash
 pip install -r requirements-llm.txt
 ```
 
-## Reproduce the canonical results
+## Running the project
 
 Run from the repository root:
 
@@ -89,7 +87,7 @@ python full_quantile_news_overlay.py
 python -m pytest -q
 ```
 
-The Qwen comparison requires the raw news CSV, which is not redistributed here. It
+The Qwen comparison requires the raw news CSV, which is not included here. The file
 must contain `date` and `title` columns:
 
 ```bash
@@ -100,7 +98,7 @@ Inference is checkpointed by anonymized headline hash. If the model or prompt ch
 delete or rename `results/full_llm_qwen3_0_6b_label_cache.csv` before rerunning; the
 cache key does not currently include the model or prompt version.
 
-## Primary result
+## Results
 
 All figures below use the common 1,103-day endpoint. Strategy returns include modeled
 transaction costs; buy-and-hold excludes an initial purchase cost. Sharpe and Sortino
@@ -114,17 +112,17 @@ use 252 trading days and a 4% annual risk-free rate.
 | Sortino ratio | 2.284 | **2.403** | 1.170 | 1.088 |
 | Maximum drawdown | 14.41% | **14.06%** | 22.05% | 31.31% |
 
-Qwen3-0.6B labeled 73.0% of headline records positive and produced a materially lower
-matched-period Sharpe than FinBERT. The paired Qwen-minus-FinBERT HAC test with the
-analyst overlay returned `p=0.145`, so the numerical difference is not statistically
-significant at 5%.
+Qwen3-0.6B labeled 73.0% of the headline records positive. Its matched-period Sharpe
+was lower than FinBERT's. The paired Qwen-minus-FinBERT HAC test with the analyst
+overlay returned `p=0.145`, so the difference was not statistically significant at
+the 5% level.
 
 The AAPL study is a historical development result, not an untouched validation. Signal
 rules and overlay choices were influenced by earlier diagnostics on overlapping data.
 Only seven earnings calls qualified for the analyst overlay. See `RESULTS.md` for the
 classifier benchmark, statistical tests, and additional limitations.
 
-## Data provenance
+## Data
 
 `data/aapl_news_scores.csv` is a compact extraction of aligned AAPL prices and daily
 FinBERT scores from Trading Strategy v1. `data/aapl_earnings_features.csv` is a compact

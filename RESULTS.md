@@ -47,7 +47,7 @@ reported analyst overlay. For the fixed-threshold strategy, the analyst overlay 
 total return from 242.50% to 264.86% and Sharpe from 1.438 to 1.497. Its paired daily
 increment test produced p=0.106, which is not significant at the 5% level.
 
-The rule was selected after examining overlapping 2022–2024 data. The earnings result
+The rule was selected after examining overlapping 2022-2024 data. The earnings result
 is therefore a development diagnostic rather than independent validation.
 
 ## Qwen3-0.6B versus FinBERT

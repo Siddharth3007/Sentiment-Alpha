@@ -28,10 +28,8 @@ def build_overlay_positions(
 ) -> pd.Series:
     positions = pd.Series(0.5, index=long_events.index, dtype=float)
 
-    # Long recovery lasts for the following close-to-close return.
     positions.loc[next_day_mask(long_events)] = 1.0
 
-    # Short events override core and recovery-long positions.
     positions.loc[next_day_mask(moderate_short_events)] = -1.0
     for event_index in strong_short_events[strong_short_events].index:
         start = event_index + 1
@@ -137,7 +135,7 @@ def main() -> None:
     plt.plot(output["date"], output["overlay_equity"], label="50% core + news overlay", linewidth=2)
     plt.plot(output["date"], output["core_equity"], label="Passive 50% AAPL")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.75)
-    plt.title("Core-plus-news overlay diagnostic: Jan–Nov 2024")
+    plt.title("Core-plus-news overlay diagnostic: Jan-Nov 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()

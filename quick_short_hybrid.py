@@ -111,7 +111,7 @@ def main() -> None:
     plt.plot(output["date"], output["hybrid_equity"], label="Tiered short rule", linewidth=2)
     plt.plot(output["date"], output["baseline_equity"], label="Baseline: >0.20, 1 day")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.7)
-    plt.title("Tiered short rule diagnostic: Jan–Nov 2024")
+    plt.title("Tiered short rule diagnostic: Jan-Nov 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()

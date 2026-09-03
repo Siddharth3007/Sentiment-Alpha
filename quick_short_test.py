@@ -82,10 +82,10 @@ def main() -> None:
     (results / "quick_short_2024_summary.json").write_text(json.dumps(summary, indent=2))
 
     plt.figure(figsize=(10, 5.5))
-    plt.plot(output["date"], output["one_day_equity"], label="Short only — 1 day")
-    plt.plot(output["date"], output["three_day_equity"], label="Short only — 3 days")
+    plt.plot(output["date"], output["one_day_equity"], label="Short only - 1 day")
+    plt.plot(output["date"], output["three_day_equity"], label="Short only - 3 days")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.75)
-    plt.title("Quick short-only diagnostic: Jan–Nov 2024")
+    plt.title("Quick short-only diagnostic: Jan-Nov 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()

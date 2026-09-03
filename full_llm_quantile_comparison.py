@@ -97,9 +97,6 @@ def classify_constrained(
             max_length=256,
         ).to(device)
         with torch.inference_mode():
-            # Qwen supports returning only the final-token logits. Requesting the
-            # default full sequence would needlessly project every prompt token
-            # over the model's entire vocabulary.
             logits = model(**encoded, logits_to_keep=1).logits[:, -1, label_ids]
         choices = logits.argmax(dim=1).detach().cpu().tolist()
         labels.extend(LABELS[choice] for choice in choices)
@@ -203,9 +200,6 @@ def classify_with_checkpoints(
     missing = unique_headlines[
         ~unique_headlines["headline_hash"].isin(set(cache["headline_hash"]))
     ].copy()
-    # Similar-length prompts share less padding within a batch. Ordering cannot
-    # affect deterministic, per-headline classification and hashes restore the
-    # original date mapping after inference.
     missing = (
         missing.assign(_prompt_length=missing["headline"].str.len())
         .sort_values(["_prompt_length", "headline_hash"])

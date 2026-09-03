@@ -71,7 +71,7 @@ def save_heatmap(grid: pd.DataFrame, path: Path) -> None:
     ax.set_yticks(range(len(pivot.index)), labels=[f"{x:.2f}" for x in pivot.index])
     ax.set_xlabel("Holding period (trading days)")
     ax.set_ylabel("Positive-news threshold")
-    ax.set_title("Short-only net return, Jan–Nov 2024")
+    ax.set_title("Short-only net return, Jan-Nov 2024")
     for row in range(values.shape[0]):
         for col in range(values.shape[1]):
             ax.text(col, row, f"{values[row, col]:.1f}%", ha="center", va="center")

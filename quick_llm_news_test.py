@@ -265,7 +265,7 @@ def main() -> None:
     plt.plot(output["date"], output["finbert_equity"], label="FinBERT overlay")
     plt.plot(output["date"], output["core_equity"], label="Passive 50% AAPL")
     plt.plot(output["date"], output["benchmark_equity"], label="AAPL buy & hold", alpha=0.7)
-    plt.title("Local LLM news diagnostic: Oct 1–Nov 27, 2024")
+    plt.title("Local LLM news diagnostic: Oct 1-Nov 27, 2024")
     plt.ylabel("Growth of $1")
     plt.grid(alpha=0.25)
     plt.legend()
